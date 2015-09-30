@@ -1,0 +1,107 @@
+\section{Notazione bra-ket}
+
+\subsection{Definizioni e proprietà}
+
+	In un sistema meccanico classico, la determinazione di tutti i gradi di libertà fornisce una conoscenza completa del sistema stesso, ovvero la possibilità di calcolare lo stato del sistema in ogni istante di tempo, presente, passato o futuro. In meccanica quantistica, generalmente, ciò non è possibile: eseguendo più volte la misurazione della medesima grandezza fisica non è impossibile rilevare valori diversi. La descrizione più accurata che possiamo dare di un sistema è dunque di tipo \textit{probabilistico}.
+
+Sia $\mathbb{C}^n$ lo spazio vettoriale dei vettori di numeri complessi $a = (a_1, a_2, ..., a_n)$. Sia $\left \langle \cdot, \cdot \right \rangle$ il prodotto interno definito da:
+
+	\begin{equation} \label{eq:innerProduct}
+		\left \langle \alpha, \beta \right \rangle = \sum_{i} a_i^{*} b_i
+	\end{equation}
+
+Notiamo che $\mathcal{H}= (\mathbb{C}^n, \left \langle \cdot, \cdot \right \rangle)$ è uno \textit{spazio di Hilbert}. \\
+Sia $\mathbf{\psi} \in \mathcal{H}$ un vettore. Se $\psi$ ha norma unitaria, ovvero se
+
+	\[
+		\left \langle \psi, \psi \right \rangle = 1
+	\]
+
+allora $\psi$ rappresenta uno \textit{stato} del sistema fisico, e lo indichiamo $\ket{\psi}$. La richiesta che ciascuno dei vettori che consideriamo abbia norma 1 sarà, come vedremo, fondamentale per l'interpretazione probabilistica degli stati quantici. Chiamiamo un vettore di questo tipo \textit{ket}. Sia ora per ogni $\varphi \in \mathcal{H}$ $f_{\varphi} : \mathbb{C}^n \rightarrow \mathbb{C}$ la funzione tale che 
+
+	\begin{equation}
+		f_{\varphi} (\psi) = \left \langle \varphi, \psi \right \rangle
+	\end{equation}
+
+È facile verificare che:
+
+	\begin{equation}
+		\forall \alpha, \beta \in \mathcal{H} \quad f_{\varphi}(\alpha + \beta) = f_{\varphi}(\alpha) + f_{\varphi}(\beta)
+	\end{equation}
+	\begin{equation}
+		\forall \alpha \in \mathcal{H},  \forall \lambda \in \mathbb{C} \quad f_{\varphi}(\lambda \alpha) = \lambda f_{\varphi}(\alpha)
+	\end{equation}
+
+Questo significa che per ogni scelta di $\varphi$, $f_{\varphi}$ è un funzionale lineare da $\mathcal{H}$ a $\mathbb{C}$; indicheremo un funzionale lineare così costruito con la notazione $\bra{\varphi}$ e lo chiameremo \textit{bra}. L'insieme di tutti i \textit{bra} costituisce lo spazio duale $\mathcal{H}^{*}$ di  $\mathcal{H}$. Adottiamo le seguenti abbreviazioni sintattiche:
+
+	\begin{equation}
+		\bra{\varphi}(\ket{\psi}) = (\bra{\varphi})\ket{\psi} \overset{def}{=} \braket{\varphi}{\psi}
+	\end{equation}
+
+La precedente notazione è, per definizione, il prodotto interno dei vettori $\varphi$ e $\psi$, che equivale ovviamente ad un numero complesso. Considerare i \textit{bra} ed i \textit{ket} come entità distinte \footnote{Questa notazione è stata introdotta dal fisico teorico inglese Paul Dirac nel 1939, e viene pertanto talvolta chiamata notazione di Dirac.} ha il vantaggio di facilitare la manipolazione delle espressioni algebriche lineari. \\
+Infatti, è facile verificare che, per linearità:
+
+	\begin{equation} \label{eq:linearityKets}
+		\bra{\varphi}(c_1 \ket{\psi_1} + c_2 \ket{\psi_2}) = c_1 \braket{\varphi}{\psi_1} + c_2 \braket{\varphi}{\psi_2}
+	\end{equation}
+
+Analogamente, secondo le usuali definizioni di somma e moltiplicazione per scalare dei funzionali lineari nello spazio duale, si ha che:
+
+	\begin{equation}
+		(c_1 \bra{\varphi_1} + c_2 \bra{\varphi_2}) \ket{\psi} = c_1 \braket{\phi_1}{\psi} + c_2 \braket{\phi_2}{\psi}
+	\end{equation}
+
+È altrettanto immediato che:
+
+	\begin{equation} \label{eq:conjugateBrakets}
+		\braket{\varphi}{\psi} = \braket{\psi}{\varphi}^*
+	\end{equation}
+
+Inoltre, per definizione:
+
+	\begin{equation} \label{eq:normalizedVectors}
+		\braket{\psi}{\psi} = 1
+	\end{equation}
+
+Se $\ket{\psi}$ è un \textit{ket} e $\bra{\varphi}$ è un \textit{bra} possiamo definire un prodotto esterno \footnote{I prodotti interno ed esterno sono talvolta chiamati in letteratura con i nomi \textit{prodotto bra-ket} e \textit{prodotto ket-bra} per via dei \textit{bra} e \textit{ket} giustapposti utilizzati per denotarli.}, che denotiamo con $\ket{\psi}\bra{\varphi}$ come l'operatore lineare tale che:
+
+	\begin{equation} \label{eq:outerProduct}
+		\left( \ket{\psi}\bra{\varphi} \right)(\alpha) = \braket{\varphi}{\alpha} \ket{\psi}
+	\end{equation}
+
+Per la definizione precedente, notiamo che:
+
+	\begin{equation} \label{eq:associativity1}
+		\left ( \ket{\varphi} \bra{\psi} \right ) \left ( \ket{ \chi } \right ) = \left ( \ket{\varphi} \right ) \left ( \braket{\psi}{\chi} \right )
+	\end{equation}
+
+Per cui adotteremo l'abbreviazione sintattica
+
+	\[
+		\ket{\varphi}\braket{\psi}{\chi}
+	\]
+
+per entrambe. Analogamente, si deve avere
+
+	\begin{equation} \label{eq:associativity2}
+		\left( \bra{\varphi} \right ) \left ( \ket{\psi} \bra{\chi} \right ) = \braket{\varphi}{\psi} \left (\bra{\chi} \right )
+	\end{equation}
+
+perché se applicate al vettore $\bra{\zeta}$ entrambe restituiscono il numero:
+	
+	\[
+		\braket{\varphi}{\psi}\braket{\chi}{\zeta}
+	\]
+
+Per cui ometteremo le parentesi scrivendo:
+
+	\[
+		\braket{\varphi}{\psi}\bra{\chi}
+	\]
+
+Dalla \eqref{eq:associativity1} e dalla \eqref{eq:associativity2} deriva che il prodotto interno ed il prodotto esterno hanno associatività mista, ovvero:
+
+	\begin{equation}
+		\bra{\varphi} \left( \ket{\psi} \braket{\chi}{\zeta} \right ) =
+		\left ( \braket{\varphi}{\psi} \bra{\chi} \right ) \ket{\zeta}
+	\end{equation}

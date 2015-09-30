@@ -1,0 +1,157 @@
+\section{Forme matriciali e operatori}
+
+\subsection{Rappresentazione vettoriale degli stati}
+
+Come abbiamo visto precedentemente, uno stato arbitrario $\ket{\psi}$ può essere scritto nella forma:
+
+	\[
+		\ket{\psi} = \ket{g_1} \braket{g_1}{\psi} + \ket{g_2} \braket{g_2}{\psi} + ... = \sum_i \ket{g_i} \braket{g_i}{\psi}
+	\]
+
+Analogamente a come i vettori di un qualsiasi spazio vettoriale possono essere scritti, una volta scelta una base, esclusivamente in funzione dei loro coefficienti, possiamo fissare la base $B = (\ket{g_1}, \ket{g_2},... \ket{g_n})$ e rappresentare un ket $\ket{\psi}$ con una matrice colonna:
+
+	\begin{equation} \label{eq:ketColumnMatrix}
+		\ket{\psi} = \left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				\braket{g_2}{\psi} \\
+				\braket{g_3}{\psi} \\
+				... \\
+				\braket{g_n}{\psi}
+			\end{array}
+		\right )
+	\end{equation}
+
+Essendo $B$ una base ortonormale, evidentemente si avrà che per ciascuno dei componenti della base $\ket{g_k}$:
+
+	\begin{equation}
+		\ket{g_k} = \left ( \begin{array}{c}
+				\braket{g_1}{g_k} \\
+				\braket{g_2}{g_k} \\
+				\braket{g_3}{g_k} \\
+				... \\
+				\braket{g_n}{g_k}
+			\end{array}
+		\right ) = \left ( \begin{array}{c}
+				\delta_{1k} \\
+				\delta_{2k} \\
+				\delta_{3k} \\
+				... \\
+				\delta_{nk}
+			\end{array}
+		\right ) = e_k
+	\end{equation}
+
+È possibile rappresentare in maniera analoga un \textit{bra}? Una scelta naturale della base è la base duale di $B$, $B^*$. Infatti, come abbiamo determinato dal raffronto delle \eqref{eq:ketsSuperposition}, \eqref{eq:brasSuperposition} i coefficienti di $\bra{\psi}$ in $B^*$ saranno i complessi coniugati dei coefficienti di $\ket{\psi}$ in $B$. È però più conveniente rappresentare i \textit{bra} come matrici riga. Scrivendo:
+
+	\begin{equation} \label{eq:braRowMatrix}
+		\bra{\varphi} = \left ( \begin{array}{c c c c c}
+			\braket{\varphi}{g_1} & \braket{\varphi}{g_2} & \braket{\varphi}{g_3} & ... & \braket{\varphi}{g_n}
+		\end{array} \right )
+	\end{equation}
+
+Possiamo rappresentare il prodotto interno $\braket{\varphi}{\psi}$ come prodotto della matrice riga che rappresenta $\bra{\varphi}$ e della matrice colonna che rappresenta $\ket{\psi}$, richiedendo ovviamente che la prima sia espressa in base $B^*$ e la seconda in base $B$:
+
+	\begin{equation} \label{eq:braketMatrixProduct}
+		\braket{\varphi}{\psi} =
+		\left ( \begin{array}{c c c c c}
+			\braket{\varphi}{g_1} & \braket{\varphi}{g_2} & \braket{\varphi}{g_3} & ... & \braket{\varphi}{g_n}
+		\end{array} \right )_{B^*}
+		\left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				\braket{g_2}{\psi} \\
+				\braket{g_3}{\psi} \\
+				... \\
+				\braket{g_n}{\psi}
+			\end{array}
+		\right )_B
+	\end{equation}
+
+È facile verificare che il prodotto tra le due matrici nella \eqref{eq:braketMatrixProduct} è uguale per definizione al prodotto interno $\left \langle \varphi, \psi \right \rangle$ definito nella \eqref{eq:innerProduct}.
+
+La \eqref{eq:ketColumnMatrix} e la \eqref{eq:braRowMatrix} ci consentono di scrivere anche il prodotto esterno definito nella \eqref{eq:outerProduct} in maniera analoga come:
+
+	\begin{equation} \label{eq:ketbraMatrixProduct}
+		\ket{\psi}\bra{\varphi} =
+		\left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				\braket{g_2}{\psi} \\
+				\braket{g_3}{\psi} \\
+				... \\
+				\braket{g_n}{\psi}
+			\end{array}
+		\right )_B
+		\left ( \begin{array}{c c c c c}
+			\braket{\varphi}{g_1} & \braket{\varphi}{g_2} & \braket{\varphi}{g_3} & ... & \braket{\varphi}{g_n}
+		\end{array} \right )_{B^*}
+	\end{equation}
+
+Svolgendo il prodotto ad RHS nella \eqref{eq:ketbraMatrixProduct} otteniamo, come lecito aspettarsi da un operatore lineare, una matrice $M \in \mathbb{C}^{n \times n}$:
+
+	\begin{equation}
+		M_{ij} = \braket{g_i}{\psi} \braket{\varphi}{g_j}
+	\end{equation}
+
+Per verificare la consistenza di questa notazione, consideriamo un vettore $\ket{\zeta}$ e calcoliamo $M \ket{\zeta}$:
+
+	\begin{equation} \label{eq:matrixDer1}
+		M \ket{\zeta} = \left ( \begin{array}{c}
+				\braket{g_1}{\psi} \sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} \\
+				... \\
+				\braket{g_k}{\psi} \sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} \\
+				... \\
+				\braket{g_n}{\psi} \sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} \\
+			\end{array}
+		\right )
+	\end{equation}
+
+La somma
+
+	\begin{equation}
+		\sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha}
+	\end{equation}
+
+si riscrive per linearità come
+
+	\begin{equation} \label{eq:matrixDer2}
+		\bra{\varphi} \sum_i \ket{g_i} \braket{g_i}{\alpha}
+	\end{equation}
+
+Ma per la \eqref{eq:ketsSuperposition} si deve avere
+
+	\begin{equation}
+		\sum_i \ket{g_i} \braket{g_i}{\alpha} = \ket{\alpha}
+	\end{equation}
+
+Quindi la \eqref{eq:matrixDer2} diventa
+
+	\begin{equation} \label{eq:matrixDer3}
+		\sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} = \braket{\varphi}{\alpha}
+	\end{equation}
+
+Sostituendo la \eqref{eq:matrixDer3} nella \eqref{eq:matrixDer1}:
+
+	\begin{equation}
+			M \ket{\zeta} = \left ( \begin{array}{c}
+				\braket{g_1}{\psi} \braket{\varphi}{\alpha} \\
+				... \\
+				\braket{g_k}{\psi} \braket{\varphi}{\alpha} \\
+				... \\
+				\braket{g_n}{\psi} \braket{\varphi}{\alpha} \\
+			\end{array}
+		\right ) = \braket{\varphi}{\alpha} \left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				... \\
+				\braket{g_k}{\psi} \\
+				... \\
+				\braket{g_n}{\psi} \\
+			\end{array}
+		\right )
+	\end{equation}
+
+Quest'ultima si riscrive come:
+
+	\begin{equation}
+		M \ket{\zeta} = \braket{\varphi}{\alpha} \ket{\psi}
+	\end{equation}
+
+la quale conferma che $M$ si comporta effettivamente come l'operatore prodotto esterno definito nella \eqref{eq:outerProduct}.

@@ -1,0 +1,111 @@
+\subsection{Operatori identità e proiezione}
+
+Sia $\ket{\psi}$ scritto nella base $B = (g_1, g_2, ..., g_n)$. Assumiamo il corrispondente $\bra{\psi}$ scritto nella base $B^*$. Per ogni $k$ consideriamo l'operatore
+
+	\[
+		\hat{P}_k = \ket{g_k} \bra{g_k}
+	\]
+
+È facile calcolare:
+
+	\begin{equation}
+		\hat{P}_k \ket{\psi} = \ket{g_k} \bra{g_k} \sum_i \ket{g_i} \braket{g_i}{\psi}
+	\end{equation}
+
+Infatti, portando $\ket{g_k} \bra{g_k}$ nella sommatoria si ha:
+
+	\begin{equation}
+		\hat{P}_k \ket{\psi} = \sum_i \ket{g_k} \braket{g_k}{g_i} \braket{g_i}{\psi}
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation}
+		\hat{P}_k \ket{\psi} = \sum_i \delta_{ki} \ket{g_k} \braket{g_i}{\psi} =  \ket{g_k} \braket{g_k}{\psi}
+	\end{equation}
+
+In maniera completamente analoga possiamo calcolare:
+
+	\begin{equation}
+		\bra{\psi} \hat{P}_k = \braket{\psi}{g_k} \bra{g_k}
+	\end{equation}
+
+Abbiamo mostrato che $\hat{P}_k$ estrae la componente di $\ket{\psi}$ lungo $\ket{g_k}$ (o la componente di $\bra{\psi}$ lungo $\bra{g_k}$ nel caso duale): lo chiameremo quindi \textit{operatore proiezione}.
+Consideriamo ora la definizione di $\hat{P}_k$
+
+	\[
+		\hat{P}_k = \ket{g_k} \bra{g_k}
+	\]
+
+e sommiamola su $k$. Otteniamo:
+
+	\begin{equation}
+		\sum_i \hat{P}_k = \sum_i \ket{g_k} \bra{g_k}
+	\end{equation}
+
+Applichiamo ora ad entrambe le parti dell'uguaglianza un vettore $\ket{\psi}$:
+
+	\begin{equation} \label{eq:identityDeriv1}
+		\left ( \sum_i \hat{P}_k \right ) \ket{\psi} = \sum_i \ket{g_k} \braket{g_k}{\psi}
+	\end{equation}
+
+RHS della \eqref{eq:identityDeriv1} è, per la \eqref{eq:ketsSuperposition}, il vettore $\ket{\psi}$:
+
+	\begin{equation} \label{eq:identityDeriv2}
+		\left ( \sum_i \hat{P}_k \right ) \ket{\psi} = \ket{\psi}
+	\end{equation}
+
+Dalla \eqref{eq:identityDeriv2} deduciamo che l'operatore $\left ( \sum_i \hat{P}_k \right )$ lascia immutato il \textit{ket} a cui viene applicato. Analoghi calcoli ci portano a scrivere:
+
+	\begin{equation}
+		\bra{\psi} \left ( \sum_i \hat{P}_k \right ) = \bra{\psi}
+	\end{equation}
+
+da cui si osserva che la medesima relazione vale per i \textit{bra}. $\left ( \sum_i \hat{P}_k \right )$ è pertanto l'operatore identità, che indichamo con $\hat{1}$:
+
+	\[
+		\hat{1} =  \left ( \sum_i \hat{P}_k \right ) = \sum_i \ket{g_k} \bra{g_k}
+	\]
+
+Le rappresentazioni matriciali dei \textit{ket} e dei \textit{bra} che abbiamo dato precedentemente, ci consentono di scrivere facilmente anche gli operatori proiezione ed identità sotto forma di matrice. Scrivendo infatti la \eqref{eq:ketbraMatrixProduct} con $\ket{\psi} = \ket{g_k}$, $\bra{\varphi} = \bra{g_k}$ abbiamo:
+
+	\begin{equation}
+		\ket{g_k}\bra{g_k} = 
+		\left ( \begin{array}{c c c c}
+			\braket{g_1}{g_k} \braket{g_k}{g_1} & \braket{g_1}{g_k}\braket{g_k}{g_2} & ... & \braket{g_1}{g_k} \braket{g_k}{g_n} \\
+			\braket{g_2}{g_k} \braket{g_k}{g_1} & \ddots &  & \\
+			\vdots & & & \\
+			\braket{g_n}{g_k} \braket{g_k}{g_1}& & & \braket{g_n}{g_k} \braket{g_k}{g_n}
+		\end{array} \right )
+	\end{equation}
+
+ovvero la matrice che vale $0$ ovunque, $1$ sul $k$-esimo elemento della diagonale principale. Quindi,
+
+	\begin{equation}
+		\hat{P}_1 = 
+		\left ( \begin{array}{c c c c}
+			1 & & & \\
+			& 0 & & \\
+			& & \ddots & \\
+			& & & 0 \\
+		\end{array} \right ), \quad ..., \quad
+		\hat{P}_n = 
+		\left ( \begin{array}{c c c c}
+			0 & & & \\
+			& 0 & & \\
+			& & \ddots & \\
+			& & & 1 \\
+		\end{array} \right )
+	\end{equation}
+
+L'operatore identità può allora essere scritto semplicemente come:
+
+	\begin{equation}
+		\hat{1} = \sum_k \hat{P}_k =
+		\left ( \begin{array}{c c c c}
+			1 & & & \\
+			& 1 & & \\
+			& & \ddots & \\
+			& & & 1 \\
+		\end{array} \right ) = I_n
+	\end{equation}

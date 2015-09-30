@@ -1,0 +1,149 @@
+\subsection{Stato generico e sovrapposizione di stati}
+
+Consideriamo una grandezza fisica $G$ la cui misurazione fornisce i valori discreti $S = \{g_1, g_2, ..., g_n\}$. È un postulato della teoria che a $G$ sia associato un operatore $\hat{G}$ sullo spazio $\mathcal{H}$, lineare ed autoaggiunto. Per il teorema spettrale, deve esistere una base $B$ di $\mathcal{H}$ che sia ortonormale e composta da autovettori di $G$. Si può supporre che $G$ sia stato scelto in maniera tale che gli autovalori associati agli autovettori in $B$ siano gli elementi di $S$.
+In tal caso, indichiamo gli autovettori corrispondenti a $g_1, g_2, ..., g_n$ con $\ket{g_1}, \ket{g_2}, ..., \ket{g_n}$. Siamo autorizzati a supporre che tali autovettori siano \textit{ket} perché se costituiscono una base ortonormale devono necessariamente avere norma unitaria.
+Il fatto che $B = ( \ket{g_1}, \ket{g_2}, ..., \ket{g_n} ) $ sia ortonormale si può scrivere sinteticamente come: 
+
+	\begin{equation} \label{eq:orthonormalBasis}
+		\braket{g_i}{g_j} = \delta_{ij}
+	\end{equation}
+
+Dove:
+
+ 	\begin{equation}
+		\delta_{ij} = \left \{ \begin{array}{l}
+				0 \quad \text{se} \quad i \neq j \\
+				1 \quad \text{se} \quad i = j \\
+			\end{array}
+		\right.
+	\end{equation}
+
+
+Uno stato quantico generico, espresso sotto forma di un \textit{ket} $\ket{\psi}$, può dunque essere scritto nella forma:
+
+	\begin{equation} \label{eq:ketAsVector}
+		\ket{\psi} = c_1 \ket{g_1} + c_2 \ket{g_2} + ... = \sum_i c_i \ket{g_i}
+	\end{equation}
+
+Dove i coefficienti $(c_1, c_2, ..., c_n)$ dipendono dallo stato che stiamo considerando. La \eqref{eq:ketAsVector} può essere riscritta in una maniera più suggestiva che, come vedremo, consente una singolare interpretazione dal punto di vista fisico. Prendiamo uno dei \textit{ket} $\ket{g_k}$ e consideriamo il suo duale $\bra{g_k}$. Applicando $\bra{g_k}$ ad entrambi i termini otteniamo:
+
+	\begin{equation}
+		\bra{g_k}(\ket{\psi}) = \bra{g_k}(\sum_i c_i \ket{g_i})
+	\end{equation}
+
+Per la \eqref{eq:linearityKets} abbiamo:
+
+	\begin{equation}
+		\braket{g_k}{\psi} = \sum_i c_i \braket{g_k}{g_i}
+	\end{equation}
+
+Che per la \eqref{eq:orthonormalBasis} diventa:
+
+	\begin{equation} \label{eq:componentsAsBrakets}
+		\braket{g_k}{\psi} = c_k
+	\end{equation}
+
+A questo punto, per ogni $k$, sostituiamo la \eqref{eq:componentsAsBrakets} nella \eqref{eq:ketAsVector}. Abbiamo:
+
+	\begin{equation} \label{eq:ketsSuperposition}
+		\ket{\psi} = \ket{g_1} \braket{g_1}{\psi} + \ket{g_2} \braket{g_2}{\psi} + ... = \sum_i \ket{g_i} \braket{g_i}{\psi}
+	\end{equation}
+
+Possiamo ottenere una interessante conclusione applicando $\bra{\psi}$ alla \eqref{eq:ketsSuperposition}. Si ha infatti:
+
+	\begin{equation}
+		1 = \braket{\psi}{\psi} = \sum_i \braket{\psi}{g_i} \braket{g_i}{\psi}
+	\end{equation}
+
+Ovvero, per la \eqref{eq:conjugateBrakets}:
+
+	\begin{equation} \label{eq:probabilitySum}
+		\sum_i \left | \braket{g_i}{\psi} \right |^2 = 1
+	\end{equation}
+
+Vista la relazione di dualità intercorrente tra i \textit{ket} ed i \textit{bra}, possiamo aspettarci di ottenere una relazione simile alla \eqref{eq:ketsSuperposition} che coinvolga i \textit{bra} invece dei \textit{ket}. Consideriamo un \textit{bra} generico $\bra{\varphi}$, ed applichiamolo ad entrambi i lati dell'uguaglianza. Si ha:
+
+	\begin{equation}
+		\braket{\varphi}{\psi} = \sum_i \left( \braket{\varphi}{g_i} \braket{g_i}{\psi} \right)
+	\end{equation}
+
+Per linearità possiamo riscrivere la precedente come:
+
+	\begin{equation} \label{eq:derivation1}
+		\bra{\varphi}(\ket{\psi}) = \left( \sum_i \braket{\varphi}{g_i} \bra{g_i} \right) (\ket{\psi})
+	\end{equation}
+
+Il termine in sommatoria nella \eqref{eq:derivation1} è un \textit{bra} moltiplicato per uno scalare, dunque esso stesso un \textit{bra}. Dal momento che la relazione espressa dalla \eqref{eq:ketsSuperposition} è generale e valida per un qualsiasi scelta di $\ket{\psi}$, anche la \eqref{eq:derivation1} deve valere per ogni $\ket{\psi}$. Ma questo significa che i due funzionali lineari
+
+	\[
+		\bra{\varphi}
+	\]
+
+e
+
+	\[
+		\sum_i \braket{\varphi}{g_i} \bra{g_i}
+	\]
+
+
+assumono il medesimo valore se applicati sullo stesso vettore, e devono pertanto essere uguali. Possiamo quindi scrivere:
+
+	\begin{equation} \label{eq:brasSuperposition}
+		\bra{\psi} = \braket{\psi}{g_1} \bra{g_1} + \braket{\psi}{g_2} \bra{g_2} + ... = \sum_i \braket{\psi}{g_i} \bra{g_i}
+	\end{equation}
+
+Confrontando la \eqref{eq:ketsSuperposition} e la \eqref{eq:brasSuperposition}, possiamo verificare che i coefficienti di $\ket{\psi}$ nella base $B = (\ket{g_1}, \ket{g_2},... \ket{g_n})$ sono i complessi coniugati dei corrispondenti coefficienti di $\bra{\psi}$ nella base duale $B^*$.
+
+\subsection{Interpretazione fisica del formalismo}
+
+La notazione bra-ket, oltre ad essere un utile strumento matematico, rappresenta una chiave di interpretazione del significato fisico delle predizioni della meccanica quantistica. Come già detto, un vettore rappresentato da un \textit{ket} $\ket{\psi}$ contiene il massimo dell'informazione che possiamo conoscere riguardo ad un determinato stato. 
+
+Il numero complesso 
+
+	\[
+		\braket{\varphi}{\psi}
+	\]
+
+viene interpretato come l' \textit{ampiezza di probabilità} per una particella nello stato $\ket{\psi}$ di trovarsi nello stato $\ket{\varphi}$. L'\textit{ampiezza di probabilità} è collegata alla probabilità in modo analogo a come sono collegate l'ampiezza e l'intensità di un'onda: la grandezza fisica immediatamente percepibile è l'intensità, ma le interazioni sono descritte in termini di ampiezza.
+
+La probabilità di trovare una particella nello stato $\bra{\varphi}$ quando viene effettuata una misurazione su una particella nello stato $\bra{\psi}$ è data da:
+
+	\begin{equation} \label{eq:braKetAsProbability}
+		\braket{\varphi}{\psi} \braket{\psi}{\varphi} = \left | \braket{g_i}{\psi} \right |^2
+	\end{equation}
+
+Notiamo che l'interpretazione data dalla \eqref{eq:braKetAsProbability} è consistente con la relazione formale espressa dalla \eqref{eq:probabilitySum}. Infatti, se una grandezza fisica $G$ può assumere i valori discreti $g_1, g_2, ..., g_n$, effettuando una misurazione di $G$ su una particella nello stato $\ket{\psi}$ possiamo non essere certi del risultato che otterremo, ma di certo dovremmo misurare uno dei $g_i$. In altre parole, detta $p_i$ la probabilità di ottenere il valore $g_i$ da tale misurazione, la somma di tutti i $p_i$ non potrà che essere 1.
+
+Un'ulteriore coincidenza con la realtà fisica si ottiene dall'analisi della \eqref{eq:orthonormalBasis}. Difatti, una particella si trova nello stato $\ket{g_k}$ se il suo valore della grandezza $G$ è conosciuto essere $g_k$. Ci aspettiamo dunque che se $i \neq j$ la probabilità di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_j}$ sia zero, e conseguentemente sia zero la relativa \textit{ampiezza di probabilità} $\braket{g_i}{g_j}$.
+
+Analogamente, è lecito aspettarsi che l'\textit{ampiezza di probabilità} di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_i}$ sia non-nulla. La scelta (convenzionale) di avere $\braket{g_i}{g_j} = 1$ è data dalla maggiore semplicità nel lavorare con una base ortonormale.
+
+L'interpretazione probabilistica della \eqref{eq:braKetAsProbability} ci consente di scrivere il \textit{valore atteso} di una misurazione di $G$ su uno stato $\ket{\psi}$, che indichiamo con $\left \langle G \right \rangle$ come:
+
+	\begin{equation}
+		\left \langle G \right \rangle = \sum_i g_i \left | \braket{g_i}{\psi} \right |^2
+	\end{equation}
+
+Scriveremo inoltre l'\textit{incertezza} di $G$, che indichiamo con $\Delta G$, come la deviazione standard delle misurazioni. Dunque abbiamo:
+
+	\begin{equation}
+		(\Delta G)^2 = \left \langle (G - \left \langle G \right \rangle) ^2 \right \rangle
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation}
+		(\Delta G)^2 = \left \langle G^2 - 2 G \left \langle G \right \rangle + \left \langle G \right \rangle ^2 \right \rangle
+	\end{equation}
+
+Da cui:
+
+	\begin{equation}
+		(\Delta G)^2 = \left \langle G^2 \right \rangle - 2 \left \langle G \right \rangle \left \langle G \right \rangle + \left \langle G^2 \right \rangle^2
+	\end{equation}
+
+Infine:
+
+	\begin{equation}
+		(\Delta G) = \sqrt{ \left \langle G^2 \right \rangle - \left \langle G \right \rangle ^ 2 }
+	\end{equation}
