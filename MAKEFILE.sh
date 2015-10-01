@@ -3,4 +3,5 @@
 	pdflatex main.tex
 	pdflatex main.tex	
 
-	ls | grep main | grep -v .tex | xargs mv -t build
+	FILES=$(ls | grep main | grep -v .tex | xargs)
+	mv $FILES ./build
