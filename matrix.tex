@@ -230,8 +230,44 @@ e
 
 Abbiamo dunque dedotto che un generico operatore autoaggiunto $\hat{A}$ può essere scritto come una matrice
 
-	\begin{equation}
+	\begin{equation} \label{eq:matricialFormOperator}
 		M_{ij} = \mel{g_i}{\hat{A}}{g_j} 
 	\end{equation}
 
-Passiamo a considerare l'operatore aggiunto di $\hat{A}$, ovvero l'operatore $\hat{A}^{\dagger}$ tale che valga:
+	Possiamo trovare anche un altro interessante risultato. Infatti, per quanto stabilito nella \eqref{eq:proofHard0}, se $\hat{A}$ è autoaggiunto e soddisfa:
+	
+	\[
+		\hat{A} \ket{\psi} = \ket{\varphi}
+	\]
+	
+deve necessariamente valere anche:
+
+	\[
+		\bra{\psi} \hat{A} = \bra{\varphi}
+	\]
+
+Prendiamo ora il prodotto della prima con $\bra{\chi}$:
+
+	\begin{equation}
+		\mel{\chi}{\hat{A}}{\psi} = \braket{\chi}{\varphi}
+	\end{equation}
+
+E il prodotto della seconda con $\ket{\chi}$:
+
+	\begin{equation}
+		\mel{\psi}{\hat{A}}{\chi}
+	\end{equation}
+
+Ora siccome $\braket{\chi}{\varphi} = \braket{\chi}{\varphi}^*$ abbiamo
+
+	\begin{equation} \label{eq:hermitianConj}
+		\mel{\psi}{\hat{A}}{\chi} = \mel{\chi}{\hat{A}}{\psi}^*
+	\end{equation}
+
+	Dal momento che la \eqref{eq:hermitianConj} vale per ogni scelta di $(\bra{\chi}, \bra{\psi})$, vale in particolare per due generici stati $(g_i, g_j)$, abbiamo dunque:
+
+	\begin{equation}
+		\mel{g_i}{\hat{A}}{g_j} = \mel{g_j}{\hat{A}}{g_i}^*
+	\end{equation}
+
+Essendo i due termini esattamente gli elementi delle matrici associate, deduciamo che la rappresentazione matriciale di un operatore autoaggiunto è uguale alla sua coniugata trasposta, consistentemente con la nomenclatura impiegata dall'algebra lineare.

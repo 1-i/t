@@ -181,6 +181,32 @@ L'interpretazione probabilistica della \eqref{eq:braKetAsProbability} ci consent
 		\left \langle G \right \rangle = \sum_i g_i \left | \braket{g_i}{\psi} \right |^2
 	\end{equation}
 
+Possiamo anche vedere che se $G$ è una grandezza osservabile ed $\hat{G}$ è l'operatore associato a quella osservabile, allora il valore atteso $\left \langle G \right \rangle$ si può scrivere come
+
+	\[
+		\mel{\psi}{\hat{A}}{\psi}
+	\]
+
+Infatti, possiamo scrivere:
+
+	\begin{equation}
+		\mel{\psi}{\hat{A}}{\psi} = \left ( \sum c_i^* \bra{g_i} \right ) \hat{A} \left ( \sum c_i \ket{g_i} \right )
+	\end{equation}
+
+Da cui, dal momento che i vari $g_i$ sono autovettori di $G$:
+
+	\begin{equation}
+		\left ( \sum c_i^* \bra{a_1} \right ) \left ( \sum c_i g_i \ket{g_i} \right )
+	\end{equation}
+
+che è uguale a:
+
+	\begin{equation}
+		\sum \left | c_i \right | ^2 = \left \langle G \right \rangle
+	\end{equation}
+
+Ovvero esattamente quello che volevamo determinare.
+
 Scriveremo inoltre l'\textit{incertezza} di $G$, che indichiamo con $\Delta G$, come la deviazione standard delle misurazioni. Dunque abbiamo:
 
 	\begin{equation}
