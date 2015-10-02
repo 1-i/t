@@ -155,3 +155,83 @@ Quest'ultima si riscrive come:
 	\end{equation}
 
 la quale conferma che $M$ si comporta effettivamente come l'operatore prodotto esterno definito nella \eqref{eq:outerProduct}.
+
+Più in generale, consideriamo il problema della rappresentazione in forma matriciale di un operatore lineare autoaggiunto $\hat{A}$. Scriviamo l'equazione generica:
+
+	\begin{equation} \label{eq:operatorGeneric}
+		\hat{A} \ket{\psi} = \ket{\phi}
+	\end{equation}
+
+Come già ampiamente giustificato, data una base $B = (g_1, g_2, ..., g_n)$ possiamo scrivere:
+
+	\begin{equation}
+		\ket{\psi} = \sum_i \ket{g_i} \braket{g_i}{\psi}
+	\end{equation}
+
+Sostituendo la precedente nella \eqref{eq:operatorGeneric}:
+
+	\begin{equation}
+		\hat{A} \left ( \sum_i \ket{g_i} \braket{g_i}{\psi} \right ) = \ket{\varphi}
+	\end{equation}
+
+Applicando un $\bra{g_k}$:
+
+	\begin{equation} \label{eq:operatorAsMatrix}
+		\left ( \sum_i \mel{g_k}{\hat{A}}{g_i} \braket{g_i}{\psi} \right ) = \braket{g_k}{\varphi}
+	\end{equation}
+
+La \eqref{eq:operatorAsMatrix} si può riscrivere come:
+
+	\begin{equation}
+		M \left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				\braket{g_2}{\psi} \\
+				... \\
+				\braket{g_n}{\psi} \\
+			\end{array}
+		\right ) = \left ( \begin{array}{c}
+				\braket{g_1}{\varphi} \\
+				\braket{g_2}{\varphi} \\
+				... \\
+				\braket{g_n}{\varphi} \\
+			\end{array}
+		\right )
+	\end{equation}
+
+Dove
+
+	\begin{equation}
+		M_{ij} = \mel{g_i}{\hat{A}}{g_j} 
+	\end{equation}
+
+Ma
+
+	\begin{equation}
+		\left ( \begin{array}{c}
+				\braket{g_1}{\psi} \\
+				\braket{g_2}{\psi} \\
+				... \\
+				\braket{g_n}{\psi} \\
+			\end{array}
+		\right ) = \ket{\psi}
+	\end{equation}
+
+e
+
+	\begin{equation}
+		\left ( \begin{array}{c}
+				\braket{g_1}{\varphi} \\
+				\braket{g_2}{\varphi} \\
+				... \\
+				\braket{g_n}{\varphi} \\
+			\end{array}
+		\right ) = \ket{\varphi}
+	\end{equation}
+
+Abbiamo dunque dedotto che un generico operatore autoaggiunto $\hat{A}$ può essere scritto come una matrice
+
+	\begin{equation}
+		M_{ij} = \mel{g_i}{\hat{A}}{g_j} 
+	\end{equation}
+
+Passiamo a considerare l'operatore aggiunto di $\hat{A}$, ovvero l'operatore $\hat{A}^{\dagger}$ tale che valga:
