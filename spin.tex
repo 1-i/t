@@ -1,3 +1,69 @@
-\section{Polarizzazione di un fotone}
+\section{Particelle di spin $\frac{1}{2}$}
 
-Consideriamo 
+\subsection{Esperimenti di Stern-Gerlach}
+
+Avendo stabilito un formalismo matematico che ci consenta di operare sui fenomeni fisici, passiamo a considerare alcuni casi semplici.
+Nel 1922, Otto Stern e Walther Gerlach effettuarono un esperimento che fornì evidenza diretta di uno degli strani fenomeni osservabili nel mondo microscopico.
+L'apparato sperimentale era costituito da un forno in cui veniva fatto evaporare argento, facendo uscire un fascio di particelle da un foro praticato sulla superficie.
+Il fascio veniva fatto passare attraverso un magnete con il campo orientato lungo l'asse $z$, e veniva poi analizzata la distribuzione del momento angolare di spin lungo l'asse $z$, $S_z$.
+Secondo le predizioni della fisica classica, dovremmo osservare una distribuzione continua di valori per $S_z$, ma le misurazioni
+rilevarono invece che i valori assunti erano soltanto due, $+ \hbar / 2$ e $- \hbar / 2$.
+Essendo $S_z$ una grandezza fisica che assume valori discreti, possiamo modellare una particella di spin $\frac{1}{2}$ secondo il formalismo descritto fino a questo punto. Indicheremo gli stati
+
+	\[
+		\ket{S_z = + \hbar / 2} \quad \quad \ket{S_z = - \hbar / 2}
+	\]
+
+con, rispettivamente:
+
+	\[
+		\ket{+z} \quad \quad \ket{-z}
+	\]
+
+Possiamo quindi, ad esempio, scrivere uno stato generico $\ket{\psi}$ di una particella come:
+
+	\begin{equation}
+		\ket{\psi} =  \ket{+z} \braket{+z}{\psi} + \ket{-z} \braket{-z}{\psi}
+	\end{equation}
+
+(...)
+
+\subsection{Operatori di rotazione}
+
+Supponiamo di considerare una particella che possieda spin $S_z = + \hbar / 2$. Possiamo ruotarla sul piano $xz$ in maniera tale che al termine dell'operazione lo spin sia orientato sull'asse $x$, ovvero la particella sia diventata tale da avere $S_x = + \hbar / 2 $. Consideriamo dunque un \textit{operatore di rotazione} $\hat{R}(\frac{\pi}{2} j)$, che agisce sul \textit{ket} $\ket{+z}$ in maniera tale che:
+
+	\begin{equation}
+		\ket{+x} = \hat{R}(\tfrac{\pi}{2} j) \ket{+z}
+	\end{equation} 
+
+Per la \eqref{eq:proofHardAlt} abbiamo anche:
+
+	\begin{equation}
+		\bra{+x} = (\tfrac{\pi}{2} j) \bra{+z} \hat{R}^\dagger(\tfrac{\pi}{2} j)
+	\end{equation}
+
+	Notiamo che $ \hat{R}^(\tfrac{\pi}{2} j) $ non \`e autoaggiunto, infatti se fosse $ \hat{R}^(\tfrac{\pi}{2} j = \hat{R}^\dagger(\tfrac{\pi}{2}$ dovremmo avere:
+	
+	\begin{equation}
+	 	1 = \braket{+x}{+x} = \left( \bra{+z} \hat{R}(\tfrac{\pi}{2} j) \right ) \left (\hat{R}(\tfrac{\pi}{2} j) \right ) = \mel{+z}{\hat{R}(\tfrac{\pi}{2} j)\hat{R}(\tfrac{\pi}{2} j) }{+z} 
+	\end{equation} 
+
+Ma se $ \hat{R}(\tfrac{\pi}{2} j )$ effettua una rotazione di 90 gradi attorno all'asse $y$, allora applicato due volte effettuer\`a una rotazione di 180 gradi. Allora:
+
+	\begin{equation} \label{eq:rotationNotHermitian}
+		1 = \mel{+z}{\hat{R}(\tfrac{\pi} j ) }{+z}
+	\end{equation}
+
+Dal momento che stiamo parlando di rotazioni sul piano $xy$,
+
+	\begin{equation}
+		\hat{R}(\tfrac{\pi} j ) \ket{+z} = \ket{-z}
+	\end{equation}
+
+che, sostituita nella \eqref{eq:rotationNotHermitian} ci porta a:
+
+	\begin{equation}
+		1 = \braket{+z}{-z} = 0
+	\end{equation}
+
+che \`e assurdo.
