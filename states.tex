@@ -188,6 +188,28 @@ Un'ulteriore coincidenza con la realtà fisica si ottiene dall'analisi della \eq
 
 Analogamente, \`e lecito aspettarsi che l'\textit{ampiezza di probabilità} di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_i}$ sia non-nulla. La scelta (convenzionale) di avere $\braket{g_i}{g_j} = 1$ \`e data dalla maggiore semplicità nel lavorare con una base ortonormale.
 
+La visione probabilistica espressa dalla \eqref{eq:braKetAsProbability} suggerisce una ulteriore riflessione sul formalismo matematico che stiamo impiegando. Siano $\ket{\psi}$ e $\ket{\psi ' }$ due \textit{ket} che differiscono soltanto per un fattore di fase globale, in altre parole tali che:
+
+	\begin{equation}
+		\ket{\psi '} = e^{i \zeta} \ket{\psi}
+	\end{equation}
+
+Valutiamo la probabilit\`a per una particella nello stato $\ket{\psi}$ di trovarsi nello stato $\bra{\varphi}$ come:
+
+	\begin{equation}
+		\braket{\varphi}{\psi} \braket{\psi}{\varphi} = c^* c = \left | c \right | ^ 2
+	\end{equation}
+
+per qualche $c \in \mathbb{C}$. Sostituendo $\ket{\psi}$ con $\ket{\psi '}$ si ottiene:
+
+	\begin{equation}
+		\braket{\varphi}{\psi'} \braket{\psi'}{\varphi} = c^* e^{- i \zeta} c e^{i \zeta} = \left | c \right | ^ 2
+	\end{equation}
+
+Ovvero il medesimo valore ottenuto per $\ket{\psi}$. Dal momento che il nostro argomento non dipende dalla scelta di $\bra{\varphi}$, deduciamo che due stati che differiscano soltanto per un fattore di fase globale hanno la stessa probabilit\`a di trovarsi in qualsiasi stato: sono pertanto fisicamente indistinguibili.
+
+La rappresentazione degli stati fisici come \textit{ket} sar\`a dunque unica a meno di un fattore di fase globale.
+
 L'interpretazione probabilistica della \eqref{eq:braKetAsProbability} ci consente di scrivere il \textit{valore atteso} di una misurazione di $G$ su uno stato $\ket{\psi}$, che indichiamo con $\left \langle G \right \rangle$ come:
 
 	\begin{equation}

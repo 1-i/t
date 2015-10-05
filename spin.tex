@@ -32,17 +32,17 @@ Possiamo quindi, ad esempio, scrivere uno stato generico $\ket{\psi}$ di una par
 
 Supponiamo di considerare una particella che possieda spin $S_z = + \hbar / 2$. Possiamo ruotarla sul piano $xz$ in maniera tale che al termine dell'operazione lo spin sia orientato sull'asse $x$, ovvero la particella sia diventata tale da avere $S_x = + \hbar / 2 $. Consideriamo dunque un \textit{operatore di rotazione} $\hat{R}(\frac{\pi}{2} j)$, che agisce sul \textit{ket} $\ket{+z}$ in maniera tale che:
 
-	\begin{equation}
+	\begin{equation} \label{eq:rotationOperatorGeneric}
 		\ket{+x} = \hat{R}(\tfrac{\pi}{2} j) \ket{+z}
 	\end{equation} 
 
 Per la \eqref{eq:proofHardAlt} abbiamo anche:
 
-	\begin{equation}
-		\bra{+x} = (\tfrac{\pi}{2} j) \bra{+z} \hat{R}^\dagger(\tfrac{\pi}{2} j)
+	\begin{equation} \label{eq:rotationOperatorAdjoint}
+		\bra{+x} = \bra{+z} \hat{R}^\dagger(\tfrac{\pi}{2} j)
 	\end{equation}
 
-	Notiamo che $ \hat{R}^(\tfrac{\pi}{2} j) $ non \`e autoaggiunto, infatti se fosse $ \hat{R}^(\tfrac{\pi}{2} j = \hat{R}^\dagger(\tfrac{\pi}{2}$ dovremmo avere:
+	Notiamo che $ \hat{R}( \tfrac{\pi}{2} j) $ non \`e autoaggiunto, infatti se fosse $ \hat{R}(\tfrac{\pi}{2} j) = \hat{R}^\dagger(\tfrac{\pi}{2} j)$ dovremmo avere:
 	
 	\begin{equation}
 	 	1 = \braket{+x}{+x} = \left( \bra{+z} \hat{R}(\tfrac{\pi}{2} j) \right ) \left (\hat{R}(\tfrac{\pi}{2} j) \right ) = \mel{+z}{\hat{R}(\tfrac{\pi}{2} j)\hat{R}(\tfrac{\pi}{2} j) }{+z} 
@@ -51,13 +51,13 @@ Per la \eqref{eq:proofHardAlt} abbiamo anche:
 Ma se $ \hat{R}(\tfrac{\pi}{2} j )$ effettua una rotazione di 90 gradi attorno all'asse $y$, allora applicato due volte effettuer\`a una rotazione di 180 gradi. Allora:
 
 	\begin{equation} \label{eq:rotationNotHermitian}
-		1 = \mel{+z}{\hat{R}(\tfrac{\pi} j ) }{+z}
+		1 = \mel{+z}{\hat{R}(\pi j ) }{+z}
 	\end{equation}
 
 Dal momento che stiamo parlando di rotazioni sul piano $xy$,
 
 	\begin{equation}
-		\hat{R}(\tfrac{\pi} j ) \ket{+z} = \ket{-z}
+		\hat{R}(\pi j ) \ket{+z} = \ket{-z}
 	\end{equation}
 
 che, sostituita nella \eqref{eq:rotationNotHermitian} ci porta a:
@@ -67,3 +67,75 @@ che, sostituita nella \eqref{eq:rotationNotHermitian} ci porta a:
 	\end{equation}
 
 che \`e assurdo.
+
+Applicando la \eqref{eq:rotationOperatorGeneric} e la \eqref{eq:rotationOperatorAdjoint}, possiamo scrivere:
+
+	\begin{equation}
+		1 = \braket{+x}{+x} = \left ( \bra{+z} \hat{R}^\dagger(\tfrac{\pi}{2} j) \right ) \left ( \hat{R}(\tfrac{\pi}{2} j) \ket{+z} \right ) = \braket{+z}{+z} = 1
+	\end{equation}
+
+Da cui deduciamo che l'operatore di rotazione \`e l'inverso del suo aggiunto. In altre parole, se $\hat{R}(\tfrac{\pi}{2} j)$ esegue una rotazione intorno all'asse $y$ di 90 gradi in senso orario, $\hat{R}^\dagger(\tfrac{\pi}{2} j) $ compie la medesima rotazione in senso antiorario. \\
+
+\subsection{Generatore di rotazioni}
+
+Consideriamo ora rotazioni attorno all'asse $z$. Supponiamo inoltre di effettuare una rotazione di un angolo infinitesimo $d \vartheta$. Una maniera pi\`u utile di esprimere l'operatore di rotazione infinitesimale \`e la seguente:
+
+	\begin{equation} \label{eq:introducingGeneratorRot}
+		\hat{R} ( { d \vartheta k } ) = 1 - \frac{i}{\hbar} \hat{J}_z d \vartheta
+	\end{equation}
+
+Dove abbiamo introdotto un nuovo operatore $\hat{J}_z$ a cui richiediamo ovviamente di essere tale da rendere RHS nella \eqref{eq:introducingGeneratorRot} tendente a $1$ per $d \vartheta$ che tende a $0$. Dimostreremo ora che l'operatore $\hat{J}_z$ \`e autoaggiunto. Prendendo la forma aggiunta della precedente, possiamo scrivere:
+
+	\begin{equation} \label{eq:introducingGeneratorRot}
+		\hat{R}^\dagger ( { d \vartheta k } ) = 1 + \frac{i}{\hbar} \hat{J}_z^\dagger d \vartheta
+	\end{equation}
+
+dove, secondo la usuale convenzione, denotiamo $\hat{J}_z^\dagger$ l'operatore aggiunto di $\hat{J}_z$. L'operatore di rotazione deve necessariamente soddisfare:
+
+	\begin{equation}
+	 	1 = \hat{R}^\dagger(d \vartheta k) \hat{R}(d \vartheta k) = \left ( 1 + \frac{i}{\hbar} \hat{J}_z^\dagger d \vartheta \right ) \left ( 1 - \frac{i}{\hbar} \hat{J}_z d \vartheta \right )
+	\end{equation}
+
+Svolgendo:
+
+	\begin{equation} \label{eq:proofGeneratorHermitian}
+		1 + \frac{i}{\hbar} \left ( \hat{J}^\dagger_z - \hat{J}_z \right ) d \vartheta + O(d \vartheta ^2) = 1
+	\end{equation}
+
+Dal momento che $d \vartheta$ \`e infinitesimo, possiamo ignorare termini di ordine superiore al primo, la \eqref{eq:proofGeneratorHermitian} \`e dunque soddisfatta solo per $\hat{J}_z = \hat{J}^\dagger_z$. Avendo descritto una rotazione di un angolo infinitesimo $d \vartheta$, possiamo scrivere rotazioni per ogni angolo finito $\vartheta$ come somma di un numero infinito di rotazioni infinitesime usando:
+
+	\[
+		d \vartheta = \lim_{N \to +\infty} \frac{\vartheta}{N}
+	\]
+
+Possiamo quindi riscrivere l'operatore di rotazione $\hat{R} (\vartheta k )$ come:
+
+	\begin{equation}
+		\hat{R} (\vartheta k ) = \lim_{N \to +\infty} \left [ 1 - \frac{i}{\hbar} \left ( \frac {\vartheta}{N} \right ) \right ] ^ N
+	\end{equation}
+
+Espandendo RHS in serie di Taylor, possiamo stabilire infine:
+
+	\begin{equation} \label{eq:rOperatorAsExp}
+		\hat{R} (\vartheta k ) = e ^ {-i \hat{J}_z \vartheta / \hbar}
+	\end{equation}
+
+Potremmo chiederci ora quale sia l'effetto di una rotazione intorno all'asse $z$ del \textit{ket} $\ket{+z}$. Fisicamente, l'effetto di una tale rotazione \`e evidente: esattamente come un vettore fatto ruotare attorno ad uno stato parallelo a quest'ultimo, lo stato deve rimanere invariato. Come abbiamo discusso precedentemente, due stati che differiscano solamente per un fattore di fase sono considerati identici, dunque ci aspettiamo che valga la seguente relazione:
+
+	\begin{equation}
+		\hat{R} (\vartheta k) \ket{+z} = e^{i \zeta} \ket{+z}
+	\end{equation}
+
+Mostreremo che la precedente \`e valida solo se
+
+	\begin{equation} \label{eq:proofEigenketCondition}
+		\hat{J}_z \ket{+z} = c \ket{+z}
+	\end{equation}
+
+dove $c$ \`e una costante, ovvero se $\ket{+z}$ \`e un autovettore di $\hat{J}_z$. Espandendo l'esponenziale nella \eqref{eq:rOperatorAsExp} in serie di Taylor si ha:
+
+	\begin{equation}
+		\hat{R} (\vartheta k) \ket{+z} = \left ( 1 - \frac{i \vartheta \hat{J}_z}{\hbar} + \frac{1}{2!} \left ( - \frac{i \vartheta \hat{J}_z}{\hbar} \right )^2 + ... \right ) \ket{+z}
+	\end {equation}
+
+Supponiamo per assurdo che la \eqref{eq:proofEigenketCondition} sia falsa. Dunque, $\hat{J}_z$ deve essere diverso da $c \ket{+z}$, ovvero deve contenere un termine diverso da $\ket{+z}$, ad esempio $\ket{+x}$. Ma allora i primi  due termini della successione risulterebbero valere $\ket{+z}$ pi\`u un termine in $\ket{+x}$, che non pu\`o essere eliminato perch\`e termini che contengono potenze diverse di $\vartheta$ sono linearmente indipendenti tra loro.
