@@ -134,8 +134,176 @@ Mostreremo che la precedente \`e valida solo se
 
 dove $c$ \`e una costante, ovvero se $\ket{+z}$ \`e un autovettore di $\hat{J}_z$. Espandendo l'esponenziale nella \eqref{eq:rOperatorAsExp} in serie di Taylor si ha:
 
-	\begin{equation}
+	\begin{equation} \label{eq:rotGenTaylorSeries}
 		\hat{R} (\vartheta k) \ket{+z} = \left ( 1 - \frac{i \vartheta \hat{J}_z}{\hbar} + \frac{1}{2!} \left ( - \frac{i \vartheta \hat{J}_z}{\hbar} \right )^2 + ... \right ) \ket{+z}
 	\end {equation}
 
 Supponiamo per assurdo che la \eqref{eq:proofEigenketCondition} sia falsa. Dunque, $\hat{J}_z$ deve essere diverso da $c \ket{+z}$, ovvero deve contenere un termine diverso da $\ket{+z}$, ad esempio $\ket{+x}$. Ma allora i primi  due termini della successione risulterebbero valere $\ket{+z}$ pi\`u un termine in $\ket{+x}$, che non pu\`o essere eliminato perch\`e termini che contengono potenze diverse di $\vartheta$ sono linearmente indipendenti tra loro.
+
+Si pu\`o mostrare che l'autovalore associato ad un tale autostato corrisponde esattamente al valore $S_z$, misurato dagli esperimenti di Stern-Gerlach, in formule:
+ 
+ 	\begin{equation}
+ 		\hat{J}_z \ket{\pm z} = \pm \frac{\hbar}{2} \ket{\pm z}
+ 	\end{equation}
+ 
+Se la precedente \`e vera, allora vale:
+ 
+ 	\begin{equation}
+ 		\hat{J}_z^2 \ket{+z} = \hat{J}_z \frac{\hbar}{2} \ket{+z} = \left ( \frac{\hbar}{2} \right ) ^ 2 \ket{+z}
+ 	\end{equation}
+ 
+e cos\`i via. Dalla \eqref{eq:rotGenTaylorSeries} ottieniamo
+ 
+ 	\begin{equation} \label{eq:rotateSpinUp}
+ 		\hat{R}( \varphi k) \ket{+z} = \left [ 1 - \frac{i \varphi}{2} + \frac{1}{2!} \left ( - \frac{i \varphi}{2} \right )^2 + ... \right ] \ket{+z} = e^{-i \varphi / 2} \ket{+z}
+ 	\end{equation}
+ 
+in cui lo stato iniziale risulta moltiplicato per un fattore di fase globale, esattamente quello che ci aspetteremmo dal momento che lo stato non deve cambiare. Il valore della fase \`e determinato dall'autovalore corrispondente a $\ket{+z}$. Per mostrare che deve essere $\hbar / 2$, consideriamo la rotazione dello stato a spin down $\ket{-z}$ intorno all'asse $z$, ovvero $\hat{R}(\varphi k) \ket{-z}$. Con un ragionamento analogo a quello che ci ha portato a concludere che $\ket{+z}$ \`e autostato di $\hat{J}_z$, possiamo affermare che anche $\ket{-z}$ lo deve essere. Possiamo inoltre assumere che i due autovalori debbano essere diversi. Se cos\`i non fosse, applicando l'operatore di rotazione $\hat{R} (\varphi k )$ allo stato:
+
+	\begin{equation}
+		\ket{+x} = \frac{1}{\sqrt{2}} \ket{+z} + \frac{1}{\sqrt{2}} \ket{-z}
+	\end{equation}
+
+non lo ruoterebbe, dal momento che $\ket{+z}$ e $\ket{-z}$ acquisirebbero lo stesso fattore di fase, e dunque anche $\ket{+x}$ sarebbe moltiplicato per il medesimo fattore, rimanendo quindi invariato. Ma ruotando $\ket{+x}$ di un angolo $\varphi$ attorno all'asse $z$ ci aspetteremmo che lo stato cambiasse. Provando:
+
+	\begin{equation}
+		\hat{J}_z \ket{-z} = - \frac{\hbar}{2} \ket{-z}	
+	\end{equation}
+
+La \eqref{eq:rotGenTaylorSeries} ci d\`a:
+
+	\begin{equation} \label{eq:rotateSpinDown}
+		\hat{R}(\varphi k) \ket{-z} = \left [ 1 + \frac{i \varphi}{2} + \frac{1}{2!} \left( \frac{i \varphi}{2} \right )^2 + ... \right ] \ket{-z} = e^{i \varphi / 2} \ket {-z}
+	\end{equation}
+
+Da cui, per la \eqref{eq:rotateSpinUp} e la \eqref{eq:rotateSpinDown}:
+
+	\begin{equation}
+		\hat{R}(\varphi k) \ket{+x} = \frac{e^{-i \varphi / 2}}{\sqrt{2}} \ket{+z} + \frac{e^{i \varphi / 2}}{\sqrt{2}} \ket{-z}
+	\end{equation}
+
+Raccogliendo:
+
+	\begin{equation}
+		e^{-i \varphi / 2} \left ( \frac{1}{\sqrt{2}} \ket{+z} + \frac{e^{i \varphi}}{\sqrt{2}} \ket{-z} \right )
+	\end{equation}
+
+che \`e uno stato chiaramente diverso rispetto al precedente per $\varphi \neq 0$. In particolare, se poniamo $\varphi = \pi / 2$, otteniamo
+
+	\begin{equation}
+		\hat{R}(\tfrac{\pi}{2} k) = e^{-i \pi / 4} \left ( \frac{1}{\sqrt{2}} \ket{+z} + \frac{e^{i \pi / 2}}{\sqrt{2}} \ket{-z} \right )	
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation}
+		e^{-i \pi / 4} \left( \frac{1}{\sqrt{2}} \ket{+z} + \frac{i}{\sqrt{2}} \ket{-z} \right ) = e^{-i \pi / 4} \ket{+y}
+	\end{equation}
+
+Dal momento che due stati che differiscono solamente per una fase globale sono identici, vediamo che ruotando lo stato $\ket{+z}$ di un angolo retto in senso antiorario attorno all'asse $z$ genera lo stato $\ket{+y}$.
+
+La conclusione \`e sorprendente: il generatore di rotazioni intorno all'asse $z$, se applicato agli stati $\ket{+z}$ e $\ket{-z}$, risulta essere una costante per lo stato stesso; gli autovalori per i due autostati sono i valori della componente $z$ del momento angolare intrinseco che caratterizza quegli stati.
+
+\subsection{Rappresentazione matriciale di $\hat{J}_z$}
+
+Evidentemente, anche l'operatore $\hat{J_z}$ pu\`o essere espresso in forma matriciale. Grazie alle formule precedenti possiamo facilmente valutare:
+
+	\begin{equation}
+		\hat{J}_z = 
+			\left( \begin{array}{c c}
+				\mel{+z}{\hat{J}_z}{+z} & \mel{+z}{\hat{J}_z}{-z} \\
+				\mel{-z}{\hat{J}_z}{+z} & \mel{-z}{\hat{J}_z}{-z} \\
+			\end{array}
+		\right )
+	\end{equation}
+
+Da cui:	
+
+	\begin{equation}
+		\hat{J}_z = 
+			\left( \begin{array}{c c}
+				(\hbar / 2) \braket{+z}{+z} & (- \hbar / 2) \braket{+z}{-z} \\
+				(\hbar / 2) \braket{+z}{-z} & (- \hbar / 2) \braket{-z}{-z} 
+			\end{array}
+		\right )
+	\end{equation}
+
+Ovvero:
+	
+	\begin{equation}
+		\hat{J}_z = 
+			\left( \begin{array}{c c}
+				\hbar / 2 & 0 \\
+				0 &  - \hbar / 2 \\ 
+			\end{array}
+		\right )
+	\end{equation}
+
+La matrice \`e diagonale, ed ovviamente gli autovalori sono gli elementi della diagonale perch\`e stiamo usando una base di autovettori ortogonali. A questo punto, le relazioni $\hat{J}_z \ket{+z} = (\hbar / 2) \ket{+z}$ e $\hat{J}_z \ket{-z} = (- \hbar / 2) \ket{-z}$ possono essere espresse semplicemente come:
+
+	\begin{equation}
+		\hat{J}_z = 
+		\left( \begin{array}{c c}
+				\hbar / 2 & 0 \\
+				0 &  - \hbar / 2 \\ 
+			\end{array}
+		\right )
+		\left( \begin{array}{c}
+				1 \\
+				0 \\
+			\end{array}
+		\right ) = \frac{\hbar}{2} \left( \begin{array}{c}
+				1 \\
+				0 \\
+			\end{array}
+		\right )
+	\end{equation}
+
+e
+
+	\begin{equation}
+		\hat{J}_z = 
+		\left( \begin{array}{c c}
+				\hbar / 2 & 0 \\
+				0 &  - \hbar / 2 \\ 
+			\end{array}
+		\right )
+		\left( \begin{array}{c}
+				0 \\
+				1 \\
+			\end{array}
+		\right ) -\frac{\hbar}{2} \left( \begin{array}{c}
+				0 \\
+				1 \\
+			\end{array}
+		\right ) 
+	\end{equation}
+
+Possiamo inoltre scrivere:
+
+	\begin{equation}
+		\hat{J}_z = 
+		\left( \begin{array}{c c}
+				\hbar / 2 & 0 \\
+				0 &  - \hbar / 2 \\ 
+			\end{array}
+		\right ) =
+		\frac{\hbar}{2}
+		\left( \begin{array}{c c}
+				1 & 0 \\
+				0 & 0 \\ 
+			\end{array}
+		\right ) -
+		\frac{\hbar}{2}
+		\left( \begin{array}{c c}
+				0 & 0 \\
+				0 & 1 \\ 
+			\end{array}
+		\right )
+	\end{equation}
+
+Da cui, scrivendo gli operatori in forma esplicita:
+
+	\begin{equation}
+		\hat{J}_z = \frac{\hbar}{2} \hat{P}_{\ket{+z}} - \frac{\hbar}{2} \hat{P}_{\ket{+z}} = \frac{\hbar}{2} \ketbra{+z}{+z} - \frac{\hbar}{2} \ketbra{-z}{-z}
+	\end{equation}

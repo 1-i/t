@@ -1,0 +1,45 @@
+\section{Momento angolare}
+
+(...)
+
+\subsection{Operatori commutativi}
+
+Consideriamo due operatori lineari autoaggiunti $\hat{A}$, $\hat{B}$ che soddisfino
+
+	\begin{equation} \label{eq:commutativeOperators}
+		\left [ \hat{A}, \hat{B} \right ] \overset{def}{=} \hat{A}\hat{B} - \hat{B}\hat{A} = 0
+	\end{equation}
+
+Supponiamo che esista un unico stato $\ket{a}$ che sia autovettore di $\hat{A}$ con autovalore $a$:
+
+	\begin{equation} \label{eq:assumeUniqEigenstate}
+		\hat{A}\ket{a} = a \ket{a}
+	\end{equation}
+
+Applicando $\hat{B}$ ad entrambi i lati della \eqref{eq:assumeUniqEigenstate} otteniamo
+
+	\begin{equation}
+		\hat{B}\hat{A}\ket{a} = \hat{B}a\ket{a}
+	\end{equation}
+
+Per la \eqref{eq:commutativeOperators} e per linearit\`a di $\hat{B}$ possiamo scrivere:
+
+	\begin{equation}
+		\hat{A}\hat{B} \ket{a} = a \hat{B} \ket{a}
+	\end{equation}
+
+che interpretiamo come:
+
+	\begin{equation} \label{eq:commonEigenstate}
+		\hat{A} \left ( \hat{B} \ket{a} \right ) = a \left ( \hat{B} \ket{a} \right )
+	\end{equation}
+
+La \eqref{eq:commonEigenstate} ci dice che lo stato $\hat{B} \ket{a}$ \`e un autostato dell'operatore $\hat{A}$ con autovalore $a$. Ma avevamo supposto che ci fosse uno solo di questi stati, concludiamo quindi che deve necessariamente essere:
+
+	\begin{equation} \label{eq:sharedEigenstate}
+		\hat{B}\ket{a} = b \ket{a}
+	\end{equation}
+
+dove $b$ \`e una costante, dal momento che se $\ket{a}$ soddisfa la \eqref{eq:assumeUniqEigenstate}, anche $b \ket{a}$ per ogni $b$ la soddisfa analogamente. La \eqref{eq:sharedEigenstate} ci dice per\`o che $\ket{a}$ \`e anche un autostato di $\hat{B}$, con autovalore $b$. Per denotare uno stato di questo tipo, utilizzeremo la notazione $\ket{a, b}$ e diremo che $\hat{A}$, $\hat{B}$ hanno l'autostato $\ket{a, b}$ in comune. \\
+
+Se esiste pi\`u di un autostato dell'operatore $\hat{A}$ con autovalore $a$, ci troviamo in un caso \textit{degenere}. In un caso \textit{degenere}, si possono sempre trovare combinazioni lineari degli stati degeneri di $\hat{A}$ che sono autostati dell'operatore $\hat{B}$, implicando che due operatori lineari autoaggiunti che commutano hanno sempre un insieme completo di autostati in comune. Questo risultato \`e una conseguenza del teorema spettrale.
