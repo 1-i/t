@@ -43,3 +43,224 @@ La \eqref{eq:commonEigenstate} ci dice che lo stato $\hat{B} \ket{a}$ \`e un aut
 dove $b$ \`e una costante, dal momento che se $\ket{a}$ soddisfa la \eqref{eq:assumeUniqEigenstate}, anche $b \ket{a}$ per ogni $b$ la soddisfa analogamente. La \eqref{eq:sharedEigenstate} ci dice per\`o che $\ket{a}$ \`e anche un autostato di $\hat{B}$, con autovalore $b$. Per denotare uno stato di questo tipo, utilizzeremo la notazione $\ket{a, b}$ e diremo che $\hat{A}$, $\hat{B}$ hanno l'autostato $\ket{a, b}$ in comune. \\
 
 Se esiste pi\`u di un autostato dell'operatore $\hat{A}$ con autovalore $a$, ci troviamo in un caso \textit{degenere}. In un caso \textit{degenere}, si possono sempre trovare combinazioni lineari degli stati degeneri di $\hat{A}$ che sono autostati dell'operatore $\hat{B}$, implicando che due operatori lineari autoaggiunti che commutano hanno sempre un insieme completo di autostati in comune. Questo risultato \`e una conseguenza del teorema spettrale.
+
+Come abbiamo visto, i generatori di rotazioni su diversi assi non commutano, ma l'operatore:
+
+	\begin{equation}
+		\hat{J}^2 = \hat{J} \cdot \hat{J} = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2
+	\end{equation}
+
+commuta con ciascuno dei generatori. Per dimostrarlo, prendiamo ad esempio il generatore $\hat{J}_z$. Utilizzeremo l'identit\`a
+
+	\begin{equation} \label{eq:commutatorsTrick}
+		\left [ \hat{A}, \hat{B}\hat{C} \right ] = \hat{B} \left [ \hat{A}, \hat{C} \right ] + \left [ \hat{A}, \hat{B} \right ] \hat{C}
+	\end{equation}
+
+Scriviamo:
+
+	\begin{equation}
+		\left [ \hat{J}_z, \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2 \right ] = \left [ \hat{J}_z, \hat{J}_x^2 \right ] + \left [ \hat{J}_z, \hat{J}_y^2 \right ]
+	\end{equation}
+
+Per la \eqref{eq:commutatorsTrick}, $\left [ \hat{J}_z, \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2 \right ]$ si scrive come:
+
+	\begin{equation}
+	 \hat{J}_x \left [ \hat{J}_z, \hat{J}_x \right ] + \left [ \hat{J}_z + \hat{J}_x \right ] \hat{J}_x + \hat{J}_y \left [ \hat{J}_z, \hat{J}_y \right ] + \left [ \hat{J}_z + \hat{J}_y \right ] \hat{J}_y 
+	\end{equation}
+
+che diventa:
+
+	\begin{equation}
+		i \hbar \left ( \hat{J}_x \hat{J}_y + \hat{J}_y \hat{J}_x - \hat{J}_y \hat{J}_x - \hat{J}_x \hat{J}_y \right ) = 0
+	\end{equation}
+
+Ora, dal momento che l'operatore $\hat{J}^2$ commuta con $\hat{J}_z$, devono avere autostati in comune. Siano i ket $\ket{\lambda}$, $\ket{m}$ tali che;
+
+	\begin{equation} \label{eq:commutationRelation}
+		\begin{array} {c}
+			\hat{J}^2 \ket{\lambda, m} = \lambda \hbar^2 \ket{\lambda, m} \\
+			\hat{J}_z \ket{\lambda, m} = m \hbar \ket{\lambda, m}
+		\end{array}
+	\end{equation}
+
+Dove le dimensioni sono esplicitamente indicate, in maniera tale che $\lambda$ ed $m$ risultino adimensionali. Quindi, $\ket{\lambda, m}$ \`e uno stato per cui la misurazione della componente $z$ del momento angolare restituisce il valore $m \hbar$, mentre il modulo quadro del momento angolare risulta essere $\lambda \hbar^2$. Possiamo anche vedere che $\lambda \ge 0$, consistentemente con l'interpretazione per cui $\lambda \hbar^2$ sia il modulo quadro del momento angolare. Applichiamo $\bra{\lambda, m}$ ad entrambi i lati della \eqref{eq:commutationRelation}:
+
+	\begin{equation}
+		\mel{\lambda, m}{\hat{J}^2}{\lambda, m} = \lambda \hbar^2 \braket{\lambda, m}{\lambda, m}
+	\end{equation}
+
+Come per ogni stato, $\braket{\lambda, m}{\lambda, m} = 1$. Scomponendo LHS, otterremo termini analoghi a:
+
+	\begin{equation} 
+		\mel{\lambda, m}{\hat{J}_x^2}{\lambda, m}
+	\end{equation}
+
+che possiamo vedere come:
+
+	\begin{equation} \label{eq:genericMatrixElement}
+		\left ( \bra{\lambda, m} \hat{J}_x \right ) \left ( \hat{J}_x \ket{\lambda, m} \right )
+	\end{equation}
+
+Non possiamo essere certi che esista un \textit{ket} normalizzato $\ket{\psi}$ tale che:
+
+	\begin{equation}
+		\hat{J}_x \ket{\lambda, m} = \ket{\psi}
+	\end{equation}
+
+ma certamente si pu\`o scrivere:
+
+	\begin{equation}
+		\hat{J}_x \ket{\lambda, m} = c \ket{\varphi}
+	\end{equation}
+
+Dal momento che vale la precedente, come dimostrato nella \eqref{eq:proofHard3}:
+
+	\begin{equation}
+		\bra{\lambda, m} \hat{J}_x = c^* \bra{\varphi}
+	\end{equation}
+
+Combinando le due precedenti la \eqref{eq:genericMatrixElement} diventa:
+
+	\begin{equation} \label{eq:angMomGeZero}
+		\left ( c^* \bra{\varphi} \right ) \left ( c \ket{\varphi} \right ) = c^*c \braket{\varphi}{\varphi} \ge 0
+	\end{equation}
+
+La disuguaglianza mostrata nella \eqref{eq:angMomGeZero} vale chiaramente anche per gli altri generatori di rotazione. Questo conclude il nostro argomento e dimostra che deve essere necessariamente $\lambda \ge 0$.
+
+(...)
+
+\subsection{Spettro degli autovalori}
+
+Possiamo ora determinare gli autovalori $\lambda$ ed $m$. Un vincolo di natura fisica ci \`e dato dal fatto che il quadrato della proiezione del momento angolare su ciascuno degli assi non deve eccedere il modulo di $\hat{J}^2$. Dal momento che:
+
+	\begin{equation}
+		\mel{\lambda, m}{\left ( \hat{J}^2_x + \hat{J}^2_y \right )}{\lambda, m} \ge 0
+	\end{equation}
+
+abbiamo:
+
+	\begin{equation}
+		\mel{\lambda, m}{\left ( \hat{J}^2 - \hat{J}^2_z \right )}{\lambda, m} = \left ( \lambda - m^2 \right ) \hbar^2 \braket{\lambda, m}{\lambda, m} \ge 0
+	\end{equation}
+
+che implica:
+
+	\begin{equation}
+		m^2 \le \lambda
+	\end{equation}
+
+Che \`e consistente con l'intuizione fisica concordando con la \eqref{eq:commutationRelation}. Sia ora $j$ il massimo possibile valore per $m$. Dobbiamo avere:
+
+	\begin{equation}
+		\hat{J}_+ \ket{\lambda, j} = 0
+	\end{equation}
+
+La precedente \`e necessaria perch\'e altrimenti $\hat{J}_+$ creerebbe uno stato $\ket{\lambda, j+1}$, violando la nostra assunzione per cui $j$ \`e il massimo autovalore per $\hat{J}_z$. Calcoliamo:
+
+	\begin{equation}
+		\hat{J}_- \hat{J}_+ = \left ( \hat{J}_x - i \hat{J}_y \right ) \left ( \hat{J}_x + i \hat{J}_y \right )
+	\end{equation}
+
+da cui:
+
+	\begin{equation}
+		\hat{J}_- \hat{J}_+ = \hat{J}^2_x + \hat{J}^2_y + i \left [ \hat{J}_x, \hat{J}_y \right ]
+	\end{equation}
+
+svolgendo il commutatore:
+
+	\begin{equation} \label{eq:raisLowComp}
+		\hat{J}_- \hat{J}_+	= \hat{J}^2 - \hat{J}_z^2 - \hbar \hat{J}_z
+	\end{equation}
+
+Possiamo vedere, applicando la \eqref{eq:raisLowComp}, che:
+
+	\begin{equation}
+		\hat{J}_- \hat{J}_+ \ket{\lambda, j} = \left ( \hat{J}^2 - \hat{J}_z^2 - \hbar \hat{J}_z \right ) \ket{\lambda, j}
+	\end{equation}
+
+che si riscrive come:
+
+	\begin{equation}
+		\hat{J}_- \hat{J}_+ = \left( \lambda - j^2 - j \right ) \hbar^2 \ket{\lambda, j} = 0
+	\end{equation}
+
+La precedente implica che:
+
+	\begin{equation} \label{eq:lambdaVinc1}
+		\lambda = j ( j + 1 )
+	\end{equation}
+
+Analogamente, se definiamo $j'$ come il minimo valore possibile per $m$ dovremo avere:
+
+	\begin{equation}
+		\hat{J}_- \ket{\lambda, j} = 0
+	\end{equation}
+
+Notiamo che:
+
+	\begin{equation}
+		\begin{array}{c c l}
+			\hat{J}_+ \hat{J}_- & = & \left ( \hat{J}_x + i \hat{J}_y \right ) \left ( \hat{J}_x - i \hat{J}_y \right ) \\
+			& = & \hat{J}^2_x + \hat{J}^2_y - i \left [ \hat{J}_x, \hat{J}_y \right ] \\
+			& = & \hat{J}^2 - \hat{J}^2_z + \hbar \hat{J}_z
+		\end{array}
+	\end{equation}
+
+Da cui possiamo dedurre:
+
+	\begin{equation}
+		\begin{array}{c c l}
+			\hat{J}_+ \hat{J}_- \ket{\lambda, j'} & = & \left ( \hat{J}^2 - \hat{J}_z^2 + \hbar \hat{J}_z \right ) \ket{\lambda, j'}\\
+
+		& = & \left ( \lambda - j'^2 + j' \right ) \hbar^2 \ket{\lambda, j'} = 0
+		\end{array}
+	\end{equation}
+
+Quindi, deve essere:
+
+	\begin{equation} \label{eq:lambdaVinc2}
+		\lambda  = j'^2 - j'
+	\end{equation}
+
+Mettendo insieme la \eqref{eq:lambdaVinc1} e la \eqref{eq:lambdaVinc2} si ottiene:
+
+	\begin{equation}
+		j'^2 - j = j^2 + j
+	\end {equation}
+
+Gli unici valori che soddisfano la precedente sono:
+
+	\[
+		j' = j + 1 \quad \vee \quad j' = -j
+	\]
+
+Ma la prima contraddirrebbe la nostra assunzione per cui $j$ \`e il massimo valore possibile per $m$. Dunque il minimo valore possible per $m$ \`e $-j$. Consideriamo ora lo stato:
+
+	\[
+		\ket{\lambda, j}
+	\]
+
+Se applichiamo l'operatore $\hat{J}_-$ un numero sufficiente di volte, dobbiamo necessariamente raggiungere lo stato
+
+	\[
+		\ket{\lambda, -j}
+	\]
+
+Se cos\`i non fosse, dovremmo raggiungere uno stato diverso da $-j$, poniamo $h$, per cui valga $\hat{J}_- \ket{\lambda, h} = 0$, che \`e assurdo, perch\`e come abbiamo mostrato l'unico valore possible per $j'$ \`e $-j$. Dal momento che dobbiamo poter passare da $j$ a $-j$ in un numero finito ed intero di passi, dobbiamo avere:
+
+	\begin{equation}
+		\exists k \in \mathbb{N} : \quad j - (- j) = 2j = k
+	\end{equation}
+
+In altre parole, $j = k/2$ per qualche $k$ intero. I valori possibili per $j$ sono dunque limitati e dati da:
+
+	\begin{equation}
+		j \in \left \{ 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, 2, \tfrac{5}{2}, ... \right \}
+	\end{equation}
+
+mentre i valori possibili di $m$ sono dati da:
+
+	\begin{equation}
+		m \in \left \{ j, j-1, j-2, ... -j \right \}
+	\end{equation}

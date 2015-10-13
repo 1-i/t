@@ -1,7 +1,5 @@
 \section{Particelle di spin $\frac{1}{2}$}
 
-\subsection{Esperimenti di Stern-Gerlach}
-
 Avendo stabilito un formalismo matematico che ci consenta di operare sui fenomeni fisici, passiamo a considerare alcuni casi semplici.
 Nel 1922, Otto Stern e Walther Gerlach effettuarono un esperimento che fornì evidenza diretta di uno degli strani fenomeni osservabili nel mondo microscopico.
 L'apparato sperimentale era costituito da un forno in cui veniva fatto evaporare argento, facendo uscire un fascio di particelle da un foro praticato sulla superficie.
@@ -26,7 +24,25 @@ Possiamo quindi, ad esempio, scrivere uno stato generico $\ket{\psi}$ di una par
 		\ket{\psi} =  \ket{+z} \braket{+z}{\psi} + \ket{-z} \braket{-z}{\psi}
 	\end{equation}
 
-(...)
+In forma vettoriale, con la scelta ovvia della base $B_z = \{ \ket{+z}, \ket{-z} \}$:
+
+	\begin{equation}
+		\ket{\psi} =
+			\left ( \begin{array}{c}
+				\braket{+z}{\psi} \\
+				\braket{-z}{\psi}
+			\end{array} \right )_{B_z}
+	\end{equation}
+
+Naturalmente la scelta della base non \`e unica. Ad esempio, un osservatore che misurasse lo spin $S_x$ lungo l'asse $x$ dovrebbe ottenere risultati paragonabili. Se scegliamo $B_x = \{ \ket{+x}, \ket{-x} \}$ dobbiamo avere analogamente:
+
+	\begin{equation}
+		\ket{\psi} =
+			\left ( \begin{array}{c}
+				\braket{+x}{\psi} \\
+				\braket{-x}{\psi}
+			\end{array} \right )_{B_x}
+	\end{equation}
 
 \subsection{Operatori di rotazione}
 
@@ -307,3 +323,35 @@ Da cui, scrivendo gli operatori in forma esplicita:
 	\begin{equation}
 		\hat{J}_z = \frac{\hbar}{2} \hat{P}_{\ket{+z}} - \frac{\hbar}{2} \hat{P}_{\ket{+z}} = \frac{\hbar}{2} \ketbra{+z}{+z} - \frac{\hbar}{2} \ketbra{-z}{-z}
 	\end{equation}
+
+\subsection{Cambiamento di base}
+
+	Consideriamo l'aggiunto dell'operatore di rotazione, $\hat{R}^\dagger(\vartheta)$. Supponiamo di applicare tale operatore ad un ket qualsiasi $\ket{\psi}$ per causare una sua trasformazione:
+
+	\[
+		\ket{\psi'} = \hat{R}^\dagger(\vartheta)
+	\]
+
+Come abbiamo visto, deve valere:
+
+	\begin{equation}
+		\hat{R}^\dagger(\vartheta) \hat{R}(\vartheta) = 1
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation}
+		\hat{R}^\dagger(\vartheta) = \hat{R} ( -\vartheta )
+	\end{equation}
+
+Possiamo scrivere $\ket{psi'}$ nella tradizionale forma vettoriale, scegliendo la base $B_z = \{ \ket{+z}, \ket{-z} \} $:
+
+	\begin{equation}
+		\ket{\psi'} =
+			\left ( \begin{array}{c}
+				\mel{+z}{\hat{R}^\dagger(\vartheta)}{\psi} \\
+				\mel{-z}{\hat{R}^\dagger(\vartheta)}{\psi}
+			\end{array} \right )_{B_z}
+	\end{equation}
+
+Ma invece di interpretare

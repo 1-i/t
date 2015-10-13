@@ -1,0 +1,45 @@
+\section{Sistemi di due particelle a spin 1/2}
+
+	Passiamo ora a considerare un sistema di due particelle, ciascuna con spin $\tfrac{1}{2}$. Sistemi di questo tipo sono estremamente comuni, ad esempio l'interazione di un protone e di un elettrone. La scelta pi\`u naturale della base di riferimento \`e quella di rappresentare gli stati con il valore di $S_z$ per ciascuna delle particelle:
+
+	\begin{equation}
+		\ket{+z, +z} \quad \ket{+z, -z} \quad \ket{-z, +z} \quad \ket{-z, -z}
+	\end{equation}	
+
+Un'altra scelta possible \`e, ad esempio, indicare lo stato della prima particella con il suo valore di $S_x$, quello della seconda con il valore di $S_z$:
+
+	\begin{equation}
+		\ket{+z, +x} \quad \ket{+z, -x} \quad \ket{-z, +x} \quad \ket{-z, -x}
+	\end{equation}
+
+Siccome entrambi gli insiemi formano delle basi dello spazio dei \textit{ket}, siamo in grado di sovrapporre gli stati della prima per ottenere quelli della seconda. Ad esempio:
+
+	\begin{equation}
+		\ket{+x, +z} = \frac{1}{\sqrt{2}}\ket{+z, +z} + \frac{1}{\sqrt{2}}\ket{-z, +z}
+	\end{equation}	
+
+Un altro modo di effettuare la trasformazione \`e quello di applicare i generatori di rotazione per ciascuna delle particelle. Indicheremo i generatori della prima particella che, come abbiamo visto, coincidono con gli operatori associati al momento angolare con:
+
+	\begin{equation}
+		\hat{S}_1 = \hat{S}_{1x} i + \hat{S}_{1y} j + \hat{S}_{1z} k
+	\end{equation}
+
+E similmente per la seconda particella. Dal momento che possiamo ruotare le due particelle indipendentemente l'una dall'altra, i due generatori devono commutare:
+
+	\begin{equation}
+		\left [ \hat{S}_1, \hat{S}_2 \right ] = 0
+	\end{equation}
+
+(...)
+
+\subsection{Paradosso di Einstein-Podolsky-Rosen}
+
+	Consideriamo una particella a spin-0 a riposo, e supponiamo che decada in due particelle, ciascuna a spin-$\tfrac{1}{2}$. Perch\`e la quantit\`a di moto totale sia conservata, le due particelle devono muoversi in direzioni opposte. Inoltre, perch\`e il momento angolare totale sia conservato, le due particelle devono trovarsi nello stato $\ket{0, 0}$. Supponiamo che due sperimentatori $A$ e $B$ siano posizionati sulle traiettorie delle due particelle, con lo scopo di effettuare una misura dello spin $S_z$ sulle relative particelle.
+Dal momento che, come abbiamo visto, lo stato $\ket{0, 0}$ si scrive:
+
+	\[
+		\ket{0, 0}  = \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z}
+	\]
+
+Dalla precedente possiamo vedere che se $A$ esegue una misurazione, ha il 50\% di probabilit\`a di trovare $S_{1z} = \hbar / 2$ e il 50\% di probabilit\`a di trovare $S_{1z} = - \hbar / 2$. Ma siccome lo stato globale del sistema deve essere necessariamente $\ket{0, 0}$, la misurazione di $S_z$ determina globalmente lo stato del sistema. In altre parole, conoscendo il risultato della misura di $A$, siamo in grado di prevedere con certezza quale sar\`a il valore rilevato da $B$. Il fatto sconcertante \`e che l'argomento che abbiamo mostrato fa alcuna assunzione sul modo in cui le particelle interagiscono: anche se la particella misurata da $B$ fosse in una posizione sconosciuta da $A$, una singola misura determina lo stato di \textit{entrambe}, in netta contraddizione con il \textit{principio di localit\`a} ovvero l'assunzione, completamente ragionevole nella nostra esperienza ed adottata anche nella fisica classica, che un oggetto sia influenzato soltanto dalle sue immediate vicinanze e non da altri oggetti molto distanti nello spazio. 
+Quest'ultimo punto in particolare venne interpretato come completamente irragionevole dai fisici dell'epoca, si tent\`o infatti di superare il paradosso per mezzo della cosiddetta \textit{teoria delle variabili nascoste}.
