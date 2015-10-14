@@ -324,7 +324,7 @@ Da cui, scrivendo gli operatori in forma esplicita:
 		\hat{J}_z = \frac{\hbar}{2} \hat{P}_{\ket{+z}} - \frac{\hbar}{2} \hat{P}_{\ket{+z}} = \frac{\hbar}{2} \ketbra{+z}{+z} - \frac{\hbar}{2} \ketbra{-z}{-z}
 	\end{equation}
 
-\subsection{Cambiamento di base}
+\subsection{Cambiamenti di base}
 
 	Consideriamo l'aggiunto dell'operatore di rotazione, $\hat{R}^\dagger(\vartheta)$. Supponiamo di applicare tale operatore ad un ket qualsiasi $\ket{\psi}$ per causare una sua trasformazione:
 
@@ -334,7 +334,7 @@ Da cui, scrivendo gli operatori in forma esplicita:
 
 Come abbiamo visto, deve valere:
 
-	\begin{equation}
+	\begin{equation} \label{eq:rotationAdjoint}
 		\hat{R}^\dagger(\vartheta) \hat{R}(\vartheta) = 1
 	\end{equation}
 
@@ -344,7 +344,7 @@ Ovvero:
 		\hat{R}^\dagger(\vartheta) = \hat{R} ( -\vartheta )
 	\end{equation}
 
-Possiamo scrivere $\ket{psi'}$ nella tradizionale forma vettoriale, scegliendo la base $B_z = \{ \ket{+z}, \ket{-z} \} $:
+Possiamo scrivere $\ket{\psi'}$ nella tradizionale forma vettoriale, scegliendo la base $B_z = \{ \ket{+z}, \ket{-z} \} $:
 
 	\begin{equation}
 		\ket{\psi'} =
@@ -354,4 +354,138 @@ Possiamo scrivere $\ket{psi'}$ nella tradizionale forma vettoriale, scegliendo l
 			\end{array} \right )_{B_z}
 	\end{equation}
 
-Ma invece di interpretare
+Ma invece di interpretare l'operatore $\hat{R}^\dagger$ come applicato al \textit{ket} alla sua destra, lo considereremo agente sul \textit{bra} alla sua sinistra. Dal momento che:
+
+	\begin{equation}
+		\ket{\pm x} = \hat{R} ( \tfrac{\pi}{2} j ) \ket{\pm z}
+	\end{equation}
+
+Se $\hat{R}^\dagger(\vartheta)$ \`e l'aggiunto di $\hat{R} ( \vartheta )$ allora:
+	
+	\begin{equation}
+		\bra{\pm x} = \bra{\pm z} \hat{R}^\dagger ( \tfrac{\pi}{2} j )
+	\end{equation}
+
+Quindi possiamo scrivere:
+
+	\begin{equation} \label{eq:rotChangeBasis}
+		\ket{\psi'} =
+			\left ( \begin{array}{c}
+				\braket{+z}{\psi'} \\
+				\braket{-z}{\psi'} \\
+			\end{array} \right )_{B_z} =
+			\left ( \begin{array}{c}
+				\mel{+z}{\hat{R}^\dagger(\vartheta)}{\psi} \\
+				\mel{-z}{\hat{R}^\dagger(\vartheta)}{\psi}
+			\end{array} \right )_{B_z} =
+			\left ( \begin{array}{c}
+				\braket{+x}{\psi'} \\
+				\braket{-x}{\psi'} \\
+			\end{array} \right )_{B_z}
+	\end{equation}
+
+Possiamo notare che l'ultimo termine a destra della \eqref{eq:rotChangeBasis} \`e esattamente $\ket{\psi}$ scritto in base $B_x = \{ \ket{+x}, \ket{-x} \}$. Supponiamo ora di avere un vettore $\ket{\psi}$ scritto in base $B_x$. Inserendo l'operatore identitario scritto in base $B_z$ otteniamo:
+
+	\begin{equation}
+		\left ( \begin{array}{c}
+			\braket{+x}{\psi} \\
+			\braket{-x}{\psi} \\
+		\end{array} \right )_{B_z} = 
+		\left ( \begin{array}{c c}
+			\braket{+x}{+z} & \braket{+x}{-z} \\
+			\braket{-x}{+z} & \braket{-x}{-z}
+		\end{array} \right )
+		\left ( \begin{array}{c}
+			\braket{+z}{\psi} \\
+			\braket{-z}{\psi} \\
+		\end{array} \right )_{B_z}  
+	\end{equation}
+
+Svolgendo i conti si ha:
+
+	\begin{equation}	
+		=
+		\left ( \begin{array}{c c}
+			\mel{+z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j )}{-z} & \mel{+z}{\hat{R}^\dagger ( \tfrac{\pi}{2}j )}{-z} \\ 
+			\mel{-z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j )}{-z} & \mel{-z}{\hat{R}^\dagger ( \tfrac{\pi}{2}j )}{-z} \\ 
+		\end{array} \right )
+		\left ( \begin{array}{c}
+			\braket{+z}{\psi} \\
+			\braket{-z}{\psi} \\
+		\end{array} \right )_{B_z} 
+	\end{equation}
+
+Chiameremo $S^\dagger ( \tfrac{\pi}{2} j )$ la matrice:
+
+	\[
+		\left ( \begin{array}{c c}
+			\mel{+z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j)}{-z} & \mel{+z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j)}{-z} \\ 
+			\mel{-z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j)}{-z} & \mel{-z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j)}{-z} \\ 
+		\end{array} \right )
+	\]
+
+Possiamo facilmente verificare che $S^\dagger ( \tfrac{\pi}{2} j )$ \`e la rappresentazione in base $B_z$ dell'operatore $\hat{R}^\dagger ( \tfrac{\pi}{2} j)$.
+
+Possiamo in maniera completamente analoga svolgere la trasformazione inversa, partendo da un vettore scritto in base $B_z$ ed andando ad inserire l'operatore identit\`a in base $B_x$. Questa volta la matrice che caratterizza la trasformazione sar\`a:
+
+	\[
+		\left ( \begin{array}{c c}
+			\mel{+z}{\hat{R} ( \tfrac{\pi}{2} j)}{-z} & \mel{+z}{\hat{R} ( \tfrac{\pi}{2} j)}{-z} \\ 
+			\mel{-z}{\hat{R} ( \tfrac{\pi}{2} j)}{-z} & \mel{-z}{\hat{R} ( \tfrac{\pi}{2} j)}{-z} \\ 
+		\end{array} \right )
+	\]
+
+La chiameremo $S( \tfrac{\pi}{2} j )$. Possiamo facilmente verificare che $S ( \tfrac{\pi}{2} j )$ rappresenta, sempre in base $B_z$, l'operatore $\hat{R} ( \tfrac{\pi}{2} j)$. Per la \eqref{eq:rotationAdjoint} si deve avere:
+
+	\begin{equation}
+	  S ( \tfrac{\pi}{2} j ) S^\dagger ( \tfrac{\pi}{2} j ) = I
+	\end{equation}
+
+Consideriamo ora un vettore generico $\hat{A}$. La sua rappresentazione in base $B_x$ \`e:
+
+	\[
+		\hat{A} = 
+			\left ( \begin{array}{c c}
+				\mel{+x}{\hat{A}}{+x} & \mel{+x}{A}{-x} \\
+				\mel{-x}{\hat{A}}{+x} & \mel{-x}{A}{-x}
+			\end{array} \right )
+	\]
+
+La matrice precedente si pu\`o riscrivere come:
+
+	\begin{equation}
+		\hat{A} = 
+			\left ( \begin{array}{c c}
+				\mel{+z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{+z} & 
+				\mel{+z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{-z} \\
+				\mel{-z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{+z} & 
+				\mel{-z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{-z}
+			\end{array} \right )
+	\end{equation}
+
+Prendiamo ora
+
+	\begin{equation}
+		\hat{A} = \hat{A} I = \hat{A} 
+			\left ( \begin{array}{c c}
+				\braket{+z}{+z} & \braket{+z}{-z} \\
+				\braket{-z}{+z} & \braket{-z}{-z}
+			\end{array} \right )
+	\end{equation}
+
+Consideriamo per semplicit\`a l'elemento $\hat{A}_{11}$, gli altri saranno completamente analoghi. Si ha:
+
+	\begin{equation}
+		\begin{array}{r c l}
+		\hat{A}_{11} & = & \mel{+z}{\hat{R}^\dagger ( \tfrac{\pi}{2} j )}{+z} \hat{A} \mel{+z}{\hat{R} ( \tfrac{\pi}{2} j )}{+z} \\
+		& + & \braket{+z}{-z} \hat{R}^\dagger ( \tfrac{\pi}{2} j ) \hat{A} \hat{R} ( \tfrac{\pi}{2} j ) \braket{+z}{+z} \\
+		\end{array}
+	\end{equation}
+
+Il secondo addendo \`e zero, possiamo allora scrivere:
+
+	\begin{equation}
+		\hat{A}_{B_x} =  S^\dagger ( \tfrac{\pi}{2} j ) \hat{A}_{B_z}  S ( \tfrac{\pi}{2} j ) 
+	\end{equation}
+
+Fisicamente, abbiamo eseguito una \textit{trasfomazione passiva}: invece di ruotare uno stato tenendo fissi gli assi del sistema di riferimento, lo stato \`e rimasto fisso e gli stati sono stati ruotati.

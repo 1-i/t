@@ -2,7 +2,7 @@
 
 	Passiamo ora a considerare un sistema di due particelle, ciascuna con spin $\tfrac{1}{2}$. Sistemi di questo tipo sono estremamente comuni, ad esempio l'interazione di un protone e di un elettrone. La scelta pi\`u naturale della base di riferimento \`e quella di rappresentare gli stati con il valore di $S_z$ per ciascuna delle particelle:
 
-	\begin{equation}
+	\begin{equation} \label{eq:twoPartState}
 		\ket{+z, +z} \quad \ket{+z, -z} \quad \ket{-z, +z} \quad \ket{-z, -z}
 	\end{equation}	
 
@@ -32,7 +32,7 @@ E similmente per la seconda particella. Dal momento che possiamo ruotare le due 
 
 (...)
 
-\subsection{Paradosso di Einstein-Podolsky-Rosen}
+\subsection{Paradosso di Einstein-Podolsky-Rosen e disuguaglianze di Bell}
 
 	Consideriamo una particella a spin-0 a riposo, e supponiamo che decada in due particelle, ciascuna a spin-$\tfrac{1}{2}$. Perch\`e la quantit\`a di moto totale sia conservata, le due particelle devono muoversi in direzioni opposte. Inoltre, perch\`e il momento angolare totale sia conservato, le due particelle devono trovarsi nello stato $\ket{0, 0}$. Supponiamo che due sperimentatori $A$ e $B$ siano posizionati sulle traiettorie delle due particelle, con lo scopo di effettuare una misura dello spin $S_z$ sulle relative particelle.
 Dal momento che, come abbiamo visto, lo stato $\ket{0, 0}$ si scrive:
@@ -41,5 +41,30 @@ Dal momento che, come abbiamo visto, lo stato $\ket{0, 0}$ si scrive:
 		\ket{0, 0}  = \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z}
 	\]
 
-Dalla precedente possiamo vedere che se $A$ esegue una misurazione, ha il 50\% di probabilit\`a di trovare $S_{1z} = \hbar / 2$ e il 50\% di probabilit\`a di trovare $S_{1z} = - \hbar / 2$. Ma siccome lo stato globale del sistema deve essere necessariamente $\ket{0, 0}$, la misurazione di $S_z$ determina globalmente lo stato del sistema. In altre parole, conoscendo il risultato della misura di $A$, siamo in grado di prevedere con certezza quale sar\`a il valore rilevato da $B$. Il fatto sconcertante \`e che l'argomento che abbiamo mostrato fa alcuna assunzione sul modo in cui le particelle interagiscono: anche se la particella misurata da $B$ fosse in una posizione sconosciuta da $A$, una singola misura determina lo stato di \textit{entrambe}, in netta contraddizione con il \textit{principio di localit\`a} ovvero l'assunzione, completamente ragionevole nella nostra esperienza ed adottata anche nella fisica classica, che un oggetto sia influenzato soltanto dalle sue immediate vicinanze e non da altri oggetti molto distanti nello spazio. 
-Quest'ultimo punto in particolare venne interpretato come completamente irragionevole dai fisici dell'epoca, si tent\`o infatti di superare il paradosso per mezzo della cosiddetta \textit{teoria delle variabili nascoste}.
+Dalla precedente possiamo vedere che se $A$ esegue una misurazione, ha il 50\% di probabilit\`a di trovare $S_{1z} = \hbar / 2$ e il 50\% di probabilit\`a di trovare $S_{1z} = - \hbar / 2$. La medesima situazione si verifica, ovviamente, se gli sperimentatori decidono di misurare lo spin lungo altri assi. Siccome lo stato globale del sistema deve essere necessariamente $\ket{0, 0}$, la misurazione di $S_z$ determina globalmente lo stato del sistema. In altre parole, conoscendo il risultato della misura di $A$, siamo in grado di prevedere con certezza quale sar\`a il valore rilevato da $B$. Il fatto sconcertante \`e che l'argomento che abbiamo mostrato fa alcuna assunzione sul modo in cui le particelle interagiscono: anche se la particella misurata da $B$ fosse in una posizione sconosciuta da $A$, una singola misura determina lo stato di \textit{entrambe}, in netta contraddizione con il \textit{principio di localit\`a} ovvero l'assunzione, completamente ragionevole nella nostra esperienza ed adottata anche nella fisica classica, che un oggetto sia influenzato soltanto dalle sue immediate vicinanze e non da altri oggetti molto distanti nello spazio. 
+Quest'ultimo punto in particolare venne interpretato come completamente irragionevole dai fisici dell'epoca, si tent\`o infatti di superare il paradosso per mezzo delle cosiddette \textit{teorie delle variabili nascoste}.
+
+Il concetto fondamentale alla base di una teoria a variabili nascoste \`e che a differenza dell'interpretazione convenzionale della meccanica quantistica, ogni particella porti con s\'e una serie di variabili che determinano univocamente il risultato della misura di qualsiasi grandezza fisica sulla particella stessa.
+
+Prendendo ad esempio la situazione descritta dal paradosso di Einstein-Podolsky-Rosen, nella teoria che abbiamo finora esposto, ciascuna delle due particelle generate dal decadimento non ha uno spin definito: le misure di $S_z$ non sono univocamente determinate un istante prima della misura; sono al contrario fissate dal procedimento di misura stesso. Infatti, un \textit{ket} di stato non rappresenta una miscela statistica di stati, ma una predizione di natura probabilistica sugli esiti delle misure.
+
+In una teoria a variabili nascoste, associamo a ciascuna particella il valore che otterremmo misurando, ad esempio $S_x$ o $S_z$. Dal momento che gli spin $S_x$, $S_z$ possono essere misurati indipendentemente e forniscono valori $\hbar / 2$ e $-\hbar / 2$, per ogni particella abbiamo quattro "casi":
+
+	\begin{equation}
+		\{ +z, +x \} \quad \{ +z, -x \} \quad \{ -z, +x \} \quad \{ -z, -x \}
+	\end{equation}
+
+Dove $\{ \cdot, \cdot \} $ indica i valori dello spin lungo $z$ ed $x$ rispettivamente. Una particella che sia, ad esempio, di tipo $\{ +z, -x \}$ avr\`a \textit{sempre} $S_z = + \hbar / 2$ e $S_x = - \hbar / 2$. Dai risultati della meccanica quantistica possiamo immediatamente dedurre che uno sperimentatore non pu\`o misurare contemporaneamente $S_x$ ed $S_z$ sulla medesima particella dal momento che i due operatori non commutano. Per evitare un'immediata contraddizione tra le due teorie, imponiamo che la misura di uno dei due valori implichi la rinuncia a misurare l'altro: il risultato della misura \`e predeterminato da variabili appunto ``nascoste'' che possiamo determinare soltanto una alla volta.
+
+Se consideriamo le due particelle ottenute dal decadimento di una particella a spin-0, per la conservazione del momento angolare avremo quattro possibilit\`a per i tipi delle due particelle:
+
+	\begin{equation}
+		\begin{array}{c c c}
+			\{ +z, +x \} & e & \{ -z, -x \} \\
+			\{ +z, -x \} & e & \{ -z, +x \} \\
+			\{ -z, +x \} & e & \{ +z, -x \} \\
+			\{ -z, -x \} & e & \{ +z, +x \} \\
+		\end{array}
+	\end{equation}
+
+Vogliamo dimostrare che questo modello produce risultati contraddittori rispetto a quelli della meccanica quantistica.
