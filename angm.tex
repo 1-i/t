@@ -1,6 +1,8 @@
 \section{Momento angolare}
 
-(...)
+\subsection{Noncommutativit\`a dei generatori di rotazione}
+
+
 
 \subsection{Operatori commutativi}
 
@@ -127,7 +129,72 @@ Combinando le due precedenti la \eqref{eq:genericMatrixElement} diventa:
 
 La disuguaglianza mostrata nella \eqref{eq:angMomGeZero} vale chiaramente anche per gli altri generatori di rotazione. Questo conclude il nostro argomento e dimostra che deve essere necessariamente $\lambda \ge 0$.
 
-(...)
+\subsection{Operatori di scala}
+
+Introduciamo due operatori:
+
+	\[
+		\hat{J}_+ \quad e \quad \hat{J}_-
+	\]
+
+dove $\hat{J}_+$ \`e definito come:
+
+	\[
+		\hat{J}_+ = \hat{J}_x + i \hat{J}_y
+	\]
+
+Notiamo che non sono autoaggiunti, infatti:
+
+	\[
+		\hat{J}^\dagger_+ = \hat{J}^\dagger_x - i \hat{J}^\dagger_y = \hat{J}_-
+	\]
+
+L'utilit\`a degli operatori deriva dalle loro relazioni di commutazione con $\hat{J}_z$, infatti:
+
+	\begin{equation}
+		\left [ \hat{J}_z, \hat{J}_\pm \right ] = \left [ \hat{J}_z, \hat{J}_x \pm i \hat{J}_y \right ] = i \hbar \hat{J}_y \pm
+			i ( -i \hbar \hat{J}_x ) = \pm \hbar \hat{J}_\pm
+	\end{equation}
+
+Utilizzando la precedente, possiamo calcolare:
+
+	\begin{equation}
+		\hat{J}_z \hat{J}_+ \ket{ \lambda, m} = ( \hat{J}_+ \hat{J}_z + \hbar \hat{J}_+ ) \ket{\lambda, m}
+	\end{equation}
+
+che diventa:
+
+	\begin{equation}
+		\hat{J}_z \hat{J}_+ \ket{\lambda, m} = (\hat{J}_+ m \hbar + \hbar \hat{J}_+ ) \ket{\lambda, m}
+	\end{equation}
+
+raccogliendo:
+
+	\begin{equation}
+		\hat{J}_z \left ( \hat{J}_+ \ket{\lambda, m} \right ) = (m + 1) \hbar \left ( \hat{J}_+ \ket{\lambda, m} \right )
+	\end{equation}
+
+Questo mostra che $\hat{J}_+ \ket{\lambda, m}$ \`e un autostato di $\hat{J}_z$ con autovalore $(m+1) \hbar$
+
+Con analoghi calcoli possiamo far vedere che:
+
+	\begin{equation}
+		\hat{J}_z \left ( \hat{J}_- \ket{\lambda, m} \right ) = (m - 1) \hbar \left ( \hat{J}_- \ket{\lambda, m} \right )
+	\end{equation}
+
+Ovvero che $\hat{J}_- \ket{\lambda, m}$ \`e un autostato di $\hat{J}_z$ con autovalore $(m-1) \hbar$. Intuitivamente, i due operatori ``scalano'' lo stato su cui operano di un livello, e sono pertanto detti ``di scala''.
+Notiamo che, come lecito aspettarsi, $\hat{J}_\pm \ket{\lambda, m}$ sono ancora autostati dell'operatore $\hat{J}^2$ con autovalore $\lambda \hbar^2$. Infatti, siccome
+
+	\begin{equation}
+		\left [ \hat{J}^2, J_x \right ] = 0 \quad e \quad \left [ \hat{J}^2, J_y \right ] = 0
+	\end{equation}
+
+Gli operatori $\hat{J}_+, \hat{J}_-$ comutano con $\hat{J}^2$, quindi:
+
+	\begin{equation}
+		\hat{J}^2 \left ( \hat{J}_\pm \ket{\lambda, m} \right ) = \hat{J}_\pm \hat{J}^2 \ket{\lambda, m} = \lambda \hbar^2 \left (
+			\hat{J}_\pm \ket{\lambda, m} \right )
+	\end{equation}
 
 \subsection{Spettro degli autovalori}
 

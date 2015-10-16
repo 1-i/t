@@ -48,7 +48,7 @@ Il concetto fondamentale alla base di una teoria a variabili nascoste \`e che a 
 
 Prendendo ad esempio la situazione descritta dal paradosso di Einstein-Podolsky-Rosen, nella teoria che abbiamo finora esposto, ciascuna delle due particelle generate dal decadimento non ha uno spin definito: le misure di $S_z$ non sono univocamente determinate un istante prima della misura; sono al contrario fissate dal procedimento di misura stesso. Infatti, un \textit{ket} di stato non rappresenta una miscela statistica di stati, ma una predizione di natura probabilistica sugli esiti delle misure.
 
-In una teoria a variabili nascoste, associamo a ciascuna particella il valore che otterremmo misurando, ad esempio $S_x$ o $S_z$. Dal momento che gli spin $S_x$, $S_z$ possono essere misurati indipendentemente e forniscono valori $\hbar / 2$ e $-\hbar / 2$, per ogni particella abbiamo quattro "casi":
+In una teoria a variabili nascoste, associamo a ciascuna particella il valore che otterremmo misurando, ad esempio $S_x$ o $S_z$. Dal momento che gli spin $S_x$, $S_z$ possono essere misurati indipendentemente e forniscono valori $\hbar / 2$ e $-\hbar / 2$, per ogni particella abbiamo quattro casi:
 
 	\begin{equation}
 		\{ +z, +x \} \quad \{ +z, -x \} \quad \{ -z, +x \} \quad \{ -z, -x \}
@@ -67,4 +67,116 @@ Se consideriamo le due particelle ottenute dal decadimento di una particella a s
 		\end{array}
 	\end{equation}
 
-Vogliamo dimostrare che questo modello produce risultati contraddittori rispetto a quelli della meccanica quantistica.
+Vogliamo dimostrare che questo modello produce risultati contraddittori rispetto a quelli della meccanica quantistica. Consideriamo una variante del precedente esperimento in cui due sperimentatori $A$, $B$ eseguono misurazioni su tre assi $a, b, c$, complanari ma non ortogonali. Ogni particella apparterr\`a ad uno dei tipi
+
+	\[
+		\{ \pm a, \pm b, \pm c\}
+	\]
+
+dove la terna denota lo spin ($\pm \hbar / 2$) su ciascuno degli assi. Per la conservazione del momento angolare, il decadimento genera una particella $p_1$ di tipo $\{ \pm a, \pm b, \pm c \}$, la corrispondente particella $p_2$ dovr\`a essere di tipo $ \{ \mp a, \mp b, \mp c \}$. Supponiamo di far ripetere il decadimento di una particella a spin-0 $N$ volte. Abbiamo 8 casi per le particelle $p_1, p_2$ che supponiamo verificarsi per $N_1, N_2, ..., N_8$ volte:
+
+	\begin{equation}
+		\begin{array} {l l l}
+				& p_1 & p_2 \\
+			N_1 & \{ +a, +b, +c \} & \{ -a, -b, -c \} \\
+			N_2 & \{ +a, +b, -c \} & \{ -a, -b, +c \} \\
+			N_3 & \{ +a, -b, +c \} & \{ -a, +b, -c \} \\
+			N_4 & \{ +a, -b, -c \} & \{ -a, +b, +c \} \\
+			N_5 & \{ -a, +b, +c \} & \{ +a, -b, -c \} \\
+			N_6 & \{ -a, +b, -c \} & \{ +a, -b, +c \} \\
+			N_7 & \{ -a, -b, +c \} & \{ +a, +b, -c \} \\
+			N_8 & \{ -a, -b, -c \} & \{ +a, +b, +c \} \\
+		\end{array}
+	\end{equation}
+
+Supponiamo che $A$, $B$ eseguano due misurazioni su assi scelti casualmente ma diversi tra di loro. Vogliamo determinare la probabilit\`a che $A$, $B$ rilevino valori opposti.
+
+Innanzitutto, notiamo che se ci troviamo nei casi $N_1$ o $N_8$ la probabilit\`a \`e $1$: per qualsiasi scelta della coppia di assi su cui effettuare la misurazione i risultati saranno opposti.
+
+Per ciascuno dei casi $N_2, ..., N_7$, consideriamo la misurazione effettuata da $A$. Ci sono due assi $x_1, x_2$ su cui il valore di spin \`e $s$, ed uno ($x_3$) su cui vale $-s$ per $s \in \{ \hbar/2, -\hbar/2 \}$. Secondo le regole del nostro esperimento, se $A$ sceglie $x_3$, $B$ deve scegliere $x_1$ o $x_2$; ma siccome $A$ avrebbe misurato $s$ su ciascuno di questi, $B$ dovr\`a misurare $-s$. Ne consegue che se $A$ sceglie $x_3$, $A$ e $B$ misureranno valori uguali. Supponiamo invece che $A$ scelga uno tra $x_1$ ed $x_2$, senza perdita di generalit\`a $x_1$. $B$ pu\`o scegliere con probabilit\`a $1/2$ $x_2$ o $x_3$. Se sceglie $x_2$ misurer\`a $-s$, valore opposto a quello di $A$, se sceglie $x_3$ misurer\`a invece $s$, cio\`e lo stesso valore. Riassumendo, la probabilit\`a che $A$ e $B$ trovino valori diversi nei casi $N_2, ..., N_7$ \`e data da:
+
+	\begin{equation}
+		\Pr(N_{2 \rightarrow 7}) = \frac{1}{3} \times 0 + 2 \times \frac{1}{3} \times \frac{1}{2} = \frac{1}{3}
+	\end{equation}
+
+Utilizzando la precedente possiamo scrivere la probabilit\`a globale come:
+
+	\begin{equation}
+		\Pr(N_{1 \rightarrow 8}) = \frac{\sum_i N_i \Pr(N_i)}{\sum_i N_i}
+	\end{equation}
+
+Notiamo che:
+
+	\begin{equation}
+		\Pr(N_{1 \rightarrow 8}) = \frac{1}{N} \left ( N_1 + N_8 + \sum_{i=2}^7 \frac{1}{3} N_i \right )
+	\end{equation}
+
+da cui:
+
+	\begin{equation}
+		\Pr(N_{1 \rightarrow 8}) \ge \frac{1}{N} \left ( \frac{N_1}{3} + \frac{N_8}{3} + \sum_{i=2}^7 \frac{1}{3} N_i \right )
+		= \frac{1}{N} \left ( \frac{N}{3} \right ) = \frac{1}{3}
+	\end{equation}
+
+Vediamo ora la predizione della meccanica quantistica in una situazione analoga. Rappresentiamo lo stato $\ket{0, 0}$ come:
+
+	\begin{equation}
+		\ket{0, 0} = \frac{1}{\sqrt{2}} \ket{+a, -a} - \frac{1}{\sqrt{2}} \ket{-a, +a}
+	\end{equation}
+
+L'ampiezza di probabilit\`a di trovare la particella $p_1$ con $S_{1a} = - \hbar /2$ e la particella $p_2$ con $S_{2b} = \hbar / 2$ \`e data:
+
+	\begin{equation}
+		\braket{-a, +b}{0, 0}  =  \frac{1}{\sqrt{2}} \braket{-a, +b}{+a, -a} - \frac{1}{\sqrt{2}} \braket{-a, +b}{-a, +a} \\
+	\end{equation}
+
+Il primo termine \`e zero, abbiamo quindi:
+
+	\begin{equation}
+		\braket{-a, +b}{0, 0} = - \frac{1}{\sqrt{2}} \braket{-a, +b}{-a, +a} = - \frac{1}{2} \left ( \braket{-a}{-a}_1 \right )
+			\left( \braket{+b}{+a}_2 \right )
+	\end{equation}
+
+Evidentemente $\braket{-a}{-a}_1 = 1$, quindi:
+
+	\begin{equation}
+		\braket{-a, +b}{0, 0} = - \frac{1}{\sqrt{2}} \braket{+b}{+a}
+	\end{equation}
+
+Se $\ket{n}$ forma un angolo $\vartheta$ con l'asse $z$ vale:
+
+	\begin{equation}
+		\braket{+z}{+n} = \cos \frac{\vartheta}{2}
+	\end{equation}
+
+Quindi:
+
+	\begin{equation}
+		\braket{+b}{+a} = \cos \frac{\vartheta_{ab}}{2}
+	\end{equation}
+
+La probabilit\`a effettiva di trovare le particelle nello stato $\ket{-a, +b}$ \`e dunque
+
+	\begin{equation}
+		\left | \braket{+a, -b}{0, 0} \right | ^ 2  = \frac{1}{2} \cos^2 \frac{\vartheta_{ab}}{2}
+	\end{equation}
+
+In maniera completamente analoga:
+
+	\begin{equation}
+		\left | \braket{-a, +b}{0, 0} \right | ^ 2  = \frac{1}{2} \cos^2 \frac{\vartheta_{ab}}{2}
+	\end{equation}
+
+Dunque, la probabilit\`a complessiva di ottenere spin di segno opposto misurando lo spin lungo $a$ di $p_1$ e lungo $b$ di $p_2$ \`e data da:
+
+	\begin{equation} \label{eq:paradox}
+		2 \times \frac{1}{2} \cos ^2 \frac{\vartheta_{ab}}{2} = \cos^2 \frac{\vartheta_{ab}}{2}
+	\end{equation}
+
+Supponiamo di prendere gli assi $a, b, c$ ruotati di 120 gradi l'uno rispetto all'altro. Allora, la situazione \`e completamente simmetrica a quella che abbiamo descritto precedentemente per ogni possibile scelta di assi distinti. Valutando la \eqref{eq:paradox} per $\vartheta_{ab} = \pi / 3$ si ottiene:
+
+	\begin{equation}
+		cos^2 \frac{\pi}{6} = \frac{1}{4}
+	\end{equation}
+
+L'equazione precedente \`e in completo disaccordo con la predizione effettuata dalla teoria a variabili nascoste che abbiamo sviluppato fino ad ora: una delle due deve essere sbagliata ed un esperimento in laboratorio pu\'o decidere quale delle due sia in errore.
