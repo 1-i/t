@@ -30,7 +30,93 @@ E similmente per la seconda particella. Dal momento che possiamo ruotare le due 
 		\left [ \hat{S}_1, \hat{S}_2 \right ] = 0
 	\end{equation}
 
-(...)
+\subsection{Composizione dei momenti angolari di due particelle a spin 1/2}
+
+Vogliamo risolvere il problema del momento angolare per un sistema di due particelle. Detti $S_1$, $S_2$ gli operatori di spin delle due particelle, questo equivale a determinare gli autostati di:
+
+	\begin{equation}
+		\hat{S}^2 = ( \hat{S}_1 + \hat{S}_2 ) ^ 2 = \hat{S}_1^2 + \hat{S}_2^2 + 2 \hat{S}_1 \hat{S}_2
+	\end{equation}
+
+e di:
+
+	\begin{equation}
+		\hat{S}_z = \hat{S}_{1z} + \hat{S}_{2z}
+	\end{equation}
+
+Come abbiamo visto, possiamo scrivere (usando la notazione $(s, m)$ che abbiamo introdotto):
+
+	\begin{equation}
+		\hat{S}^2 \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
+	\end{equation}
+
+e
+
+	\begin{equation}
+		\hat{S}_z \ket{s, m} = m \hbar \ket{s, m}
+	\end{equation}
+
+Dal momento che:
+
+	\begin{equation}
+		\hat{S}_1^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
+	\end{equation}
+
+e
+
+	\begin{equation}
+		\hat{S}_1^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
+	\end{equation}
+
+possiamo vedere che gli autostati di $2 \hat{S}_1 \hat{S}_2$ sono anche autostati di $S^2$. Consideriamo ora i seguenti stati:
+
+	\begin{equation}
+		\begin{array}{c}
+			\ket{+z, +z} \\
+			\frac{1}{\sqrt{2}} \ket{+z, -z} + \frac{1}{\sqrt{2}} \ket{-z, +z} \\
+			\ket{-z, -z} \\
+		\end{array}
+	\end{equation}
+
+Si pu\`o mostrare che ciascuno di essi \`e autostato di $2 \hat{S}_1 \hat{S}_2$ con autovalore $\hbar / 2$. Saranno dunque anche autostati di $\hat{S}^2$ con autovalore:
+
+	\begin{equation}
+		\left [	\frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \right ] \hbar^2 = 2 \hbar^2
+	\end{equation}
+
+Lo stato:
+
+	\begin{equation}
+		\begin{array}{c}
+			\frac{1}{2} \ket{+z, -z} - \frac{1}{2} \ket{-z, +z}
+		\end{array}
+	\end{equation}
+
+\`e invece autostato di $2 \hat{S}_1 \hat{S}_2$ con autovalore $-3/2 \hbar$, il suo autovalore associato a $\hat{S}^2$ sar\`a dunque:
+
+	\begin{equation}
+		\left [	\frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \left ( \frac{1}{2} + 1 \right ) - \frac{3}{2} \right ] \hbar^2 = 0
+	\end{equation}
+
+Nella notazione $(s, m)$ abbiamo dunque:
+
+	\begin{equation}
+		\ket{1, 1} = \ket{+z, +z}
+	\end{equation}
+
+	\begin{equation}
+		\ket{1, 0} = \frac{1}{\sqrt{2}} \ket{+z, -z} + \frac{1}{\sqrt{2}} \ket{-z, +z}
+	\end{equation}
+
+	\begin{equation}
+		\ket{1, -1} = \ket{-z, -z}
+	\end{equation}
+
+e
+
+	\begin{equation}
+		\ket{0, 0} = \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z}
+	\end{equation}
 
 \subsection{Paradosso di Einstein-Podolsky-Rosen e disuguaglianze di Bell}
 

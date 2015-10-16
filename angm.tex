@@ -2,7 +2,179 @@
 
 \subsection{Noncommutativit\`a dei generatori di rotazione}
 
+Consideriamo un vettore tridimensionale $A$, ed un secondo vettore, $A'$, ottenuto mediante una rotazione di $A$ di un angolo $\varphi$ attorno all'asse $z$. Se chiamiamo $\vartheta$ l'angolo tra la proiezione di $A$ sul piano $xy$ e l'asse $y$, possiamo scrivere le componenti di $A'$ in funzione di $\varphi, \vartheta$ e delle componenti di $A$.
 
+Innanzitutto, dal momento che la rotazione avviene attorno all'asse $z$, \`e evidente che:
+
+	\begin{equation} \label{eq:rotMatrixZ}
+		A'_z = A_z
+	\end{equation}
+
+Dal momento che $A'$ deve essere uguale in modulo ad $A$ e vale la \eqref{eq:rotMatrixZ}, anche il moduli delle proiezioni di $A$, $A'$ sul piano $xy$ devono essere uguali. Possiamo quindi calcolare $A'_x$ come:
+
+	\begin{equation}
+		A'_x = \left | A \right |_{xy} \cos \alpha
+	\end{equation}
+
+Dove $\alpha$ \`e l'angolo tra l'asse $x$ ed $A'$ proiettato sul piano $xy$. Esplicitamente:
+
+	\begin{equation}
+		A'_x = \cos(\varphi + \vartheta) \sqrt{A_x^2 + A_y^2} = (\cos \varphi \cos \vartheta - \sin \varphi \sin \vartheta)
+			\sqrt{A_x^2 + A_y^2}
+	\end{equation}
+
+Da cui:
+
+	\begin{equation} \label{eq:rotMatrixX}
+		A'_x = A_x \cos \varphi - A_y \sin \varphi
+	\end{equation}
+
+In maniera analoga si calcola:
+
+	\begin{equation}
+		A'_y = \sin( \vartheta + \varphi ) \sqrt{A_x^2 + A_y^2} = (\sin \varphi \cos \vartheta + \sin \vartheta \cos \varphi)
+			\sqrt{A_x^2 + A_y^2}
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation} \label{eq:rotMatrixY}
+		A'_y = A_x \sin \varphi + A_y \cos \varphi
+	\end{equation}
+
+Mettendo a sistema la \eqref{eq:rotMatrixZ}, la \eqref{eq:rotMatrixX}, e la \eqref{eq:rotMatrixY} otteniamo:
+
+	\begin{equation}
+		\left ( \begin{array}{c}
+			A'_x \\ A'_y \\ A'_z
+		\end{array} \right ) =
+		\left ( \begin{array}{c c c}
+			\cos \varphi & -\sin \varphi & 0 \\
+			\sin \varphi & \cos \varphi & 0 \\
+			0 & 0 & 1 \\
+		\end{array} \right )
+		\left ( \begin{array}{c}
+			A_x \\ A_y \\ A_z
+		\end{array} \right )
+	\end{equation}
+
+La matrice che ruota il vettore di un angolo $\varphi$ attorno all'asse $z$ \`e quindi data da:
+
+	\begin{equation}
+		S(\varphi k) = 
+		\left ( \begin{array}{c c c}
+			\cos \varphi & -\sin \varphi & 0 \\
+			\sin \varphi & \cos \varphi & 0 \\
+			0 & 0 & 1 \\
+		\end{array} \right )
+	\end{equation}
+
+Sostituendo in maniera ciclica $x, y, z$, otteniamo anche espressioni per le matrici di rotazione intorno agli assi $x$ ed $y$:
+	
+	\begin{equation}
+		S(\varphi i) = 
+		\left ( \begin{array}{c c c}
+			1 & 0 & 0 \\
+			0 & \cos \varphi & -\sin \varphi \\
+			0 & \sin \varphi & \cos \varphi \\
+		\end{array} \right )
+	\end{equation}
+
+	\begin{equation}
+		S(\varphi j) = 
+		\left ( \begin{array}{c c c}
+			\cos \varphi & 0 & \sin \varphi \\
+			0 & 1 & 0 \\
+			-\sin \varphi & 0 & \cos \varphi \\
+		\end{array} \right )
+	\end{equation}
+
+Per verificare la non-commutativit\`a delle rotazioni, prendiamo lo sviluppo di Taylor al secondo ordine delle precedenti per un piccolo angolo $\Delta \varphi$:
+
+	\begin{equation}
+		S(\Delta \varphi i) = 
+		\left ( \begin{array}{c c c}
+			1 & 0 & 0 \\
+			0 & 1 - \Delta \varphi^2 / 2 & - \Delta \varphi \\
+			0 & \Delta \varphi & 1 - \Delta \varphi^2 / 2 \\
+		\end{array} \right )
+	\end{equation}
+
+	\begin{equation}
+		S(\Delta \varphi j) = 
+		\left ( \begin{array}{c c c}
+			1 - \Delta \varphi^2 & 0 & \Delta \varphi \\
+			0 & 1 & 0 \\
+			-\Delta \varphi & 0 & 1 - \Delta \varphi^2 \\
+		\end{array} \right )
+	\end{equation}
+
+E calcoliamo:
+
+	\begin{equation}
+		S(\Delta \varphi i) S(\Delta \varphi j) - S(\Delta \varphi j) S(\Delta \varphi i) =
+			\left ( \begin{array}{c c c}
+				0 & - \Delta \varphi^2 & 0 \\
+				\Delta \varphi^2 & 0 & 0 \\
+				0 & 0 & 0 \\
+			\end{array} \right )
+	\end{equation}
+
+da cui deduciamo che gli operatori di rotazione non commutano. Se eliminiamo tutti i termini oltre il secondo ordine, allora:
+	
+	\begin{equation}
+		S(\Delta \varphi^2 k) = 
+		\left ( \begin{array}{c c c}
+			1 & \Delta \varphi^2 & 0\\
+			-\Delta \varphi^2 & 1 & 0 \\
+			0 & 0 & 1 \\
+		\end{array} \right )
+	\end{equation}
+
+possiamo allora scrivere anche:
+
+	\begin{equation} \label{eq:rotationOperatorsComm}
+		S(\Delta \varphi i) S(\Delta \varphi j) - S(\Delta \varphi j) S(\Delta \varphi i) = S(\Delta \varphi^2 k) - I
+	\end{equation}
+
+Quest'ultima relazione \`e significativa per dedurre il commutatore dei generatori di rotazione. Infatti, per la definizione di generatore di rotazioni abbiamo:
+
+	\begin{equation}
+		\hat{R} ( \varphi i ) = e^{-i \hat{J}_x \varphi / \hbar } \quad \quad
+		\quad \hat{R} ( \varphi j ) = e^{-i \hat{J}_y \varphi / \hbar } 
+	\end{equation}
+
+Dunque, prendendo l'espansione al secondo ordine degli operatori e sostituendoli nella \eqref{eq:rotationOperatorsComm} abbiamo:
+
+	\begin{equation}
+		\begin{array}{r l}
+		& \left ( 1 - \frac{i \hat{J}_x \Delta \varphi}{\hbar} - \frac{1}{2} \left ( \frac{\hat{J}_x \Delta \varphi}{\hbar} \right ) ^ 2 \right ) \left ( 1 - \frac{i \hat{J}_y \Delta \varphi}{\hbar} - \frac{1}{2} \left ( \frac{\hat{J}_y \Delta \varphi}{\hbar} \right ) ^ 2 \right ) \\
+		- & \left ( 1 - \frac{i \hat{J}_y \Delta \varphi}{\hbar} - \frac{1}{2} \left ( \frac{\hat{J}_y \Delta \varphi}{\hbar} \right ) ^ 2 \right ) \left ( 1 - \frac{i \hat{J}_x \Delta \varphi}{\hbar} - \frac{1}{2} \left ( \frac{\hat{J}_x \Delta \varphi}{\hbar} \right ) ^ 2 \right ) \\ 
+		= & \left ( 1 - \frac{i \hat{J}_z \Delta \varphi^2}{\hbar} \right ) - 1
+		\end{array}
+	\end{equation}
+
+Uguagliando gli unici termini al secondo ordine che rimangono si ottiene:
+
+	\begin{equation}
+		\hat{J}_x \hat{J}_y - \hat{J}_y \hat{J}_x = i \hbar \hat{J}_z
+	\end{equation}
+
+Ovvero:
+
+	\begin{equation}
+		\left [ \hat{J}_x, \hat{J}_y \right ] = i \hbar \hat{J}_z
+	\end{equation}
+
+Naturalmente, valgono anche le analoghe alla precedente ottenute per rotazione ciclica degli indici:
+
+	\begin{equation}
+		\left [ \hat{J}_y, \hat{J}_z \right ] = i \hbar \hat{J}_x
+	\end{equation}
+
+	\begin{equation}
+		\left [ \hat{J}_z, \hat{J}_x \right ] = i \hbar \hat{J}_y
+	\end{equation}
 
 \subsection{Operatori commutativi}
 
@@ -331,3 +503,33 @@ mentre i valori possibili di $m$ sono dati da:
 	\begin{equation}
 		m \in \left \{ j, j-1, j-2, ... -j \right \}
 	\end{equation}
+
+Dal momento che i generatori di rotazione corrispondono agli operatori di spin, li indicheremo con $S_x, S_y, S_z$. Nell'utilizzare questa notazione, convenzionalmente si indicano gli stati come:
+
+	\[
+		\ket{s, m}
+	\]
+
+invece che come
+
+	\[
+		\ket{\lambda, m}
+	\]
+
+Prendendo $s$ tale che $s(s+1) = \lambda$ in maniera da avere:
+
+	\begin{equation}
+		\hat{S}^2 \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
+	\end{equation}
+
+In questo modo i valori di $s$ corrispondono allo spin totale della particella, ad esempio, i due stati
+
+	\[
+		\ket{+z} \quad \ket{-z}
+	\]
+
+che abbiamo utilizzato come base nella rappresentazione dei \textit{ket} si scrivono in questa notazione come:
+
+	\[
+		\ket{\tfrac{1}{2}, \tfrac{1}{2}} \quad \ket{\tfrac{1}{2}, - \tfrac{1}{2}}
+	\]
