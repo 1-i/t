@@ -4,20 +4,21 @@
 
 	In un sistema meccanico classico, la determinazione di tutti i gradi di libertà fornisce una conoscenza completa del sistema stesso, ovvero la possibilità di calcolare lo stato del sistema in ogni istante di tempo, presente, passato o futuro. In meccanica quantistica, generalmente, ciò non è possibile: eseguendo più volte la misurazione della medesima grandezza fisica non è impossibile rilevare valori diversi. La descrizione più accurata che possiamo dare di un sistema è dunque di tipo \textit{probabilistico}.
 
-Sia $\mathbb{C}^n$ lo spazio vettoriale dei vettori di numeri complessi $a = (a_1, a_2, ..., a_n)$. Sia $\left \langle \cdot, \cdot \right \rangle$ il prodotto interno definito da:
+Sia $\mathbb{C}^n$ lo spazio vettoriale dei vettori di numeri complessi $a = (a_1, a_2, ..., a_n)$. Sia $\left \langle \cdot, \cdot \right \rangle$ il prodotto hermitiano definito da:
 
 	\begin{equation} \label{eq:innerProduct}
 		\left \langle \alpha, \beta \right \rangle = \sum_{i} a_i^{*} b_i
 	\end{equation}
 
-Notiamo che $\mathcal{H}= (\mathbb{C}^n, \left \langle \cdot, \cdot \right \rangle)$ è uno \textit{spazio di Hilbert}. \\
-Sia $\mathbf{\psi} \in \mathcal{H}$ un vettore. Se $\psi$ ha norma unitaria, ovvero se
+Notiamo che $\mathcal{H}= (\mathbb{C}^n, \left \langle \cdot, \cdot \right \rangle)$ è uno \textit{spazio di Hilbert}. In generale, uno \textit{spazio di Hilbert} \`e uno spazio vettoriale $H$ reale o complesso su cui \`e definito un prodotto interno $\left \langle \cdot, \cdot \right \rangle$, tale che $H$ sia completo rispetto alla distanza indotta da $\left \langle \cdot, \cdot \right \rangle$. Ci limiteremo a considerare \textit{spazi di Hilbert} a dimensione finita, i cui elementi sono vettori di $\mathbb{C}^n$.
+
+In meccanica quantistica, uno stato di un sistema fisico \`e rappresentato da un vettore $\mathbf{\psi} \in \mathbb{C}^n$ di norma unitaria, ovvero tale che:
 
 	\[
 		\left \langle \psi, \psi \right \rangle = 1
 	\]
 
-allora $\psi$ rappresenta uno \textit{stato} del sistema fisico, e lo indichiamo $\ket{\psi}$. La richiesta che ciascuno dei vettori che consideriamo abbia norma 1 sarà, come vedremo, fondamentale per l'interpretazione probabilistica degli stati quantici. Chiamiamo un vettore di questo tipo \textit{ket}. Sia ora per ogni $\varphi \in \mathcal{H}$ $f_{\varphi} : \mathbb{C}^n \rightarrow \mathbb{C}$ la funzione tale che 
+indicheremo un tale vettore con la notazione $\ket{\psi}$. La richiesta che ciascuno dei vettori che consideriamo abbia norma 1 sarà, come vedremo, fondamentale per l'interpretazione probabilistica degli stati quantici. Chiamiamo un vettore di questo tipo \textit{ket}. Sia ora per ogni $\varphi \in \mathcal{H}$ $f_{\varphi} : \mathbb{C}^n \rightarrow \mathbb{C}$ la funzione tale che 
 
 	\begin{equation}
 		f_{\varphi} (\psi) = \left \langle \varphi, \psi \right \rangle
@@ -32,7 +33,7 @@ allora $\psi$ rappresenta uno \textit{stato} del sistema fisico, e lo indichiamo
 		\forall \alpha \in \mathcal{H},  \forall \lambda \in \mathbb{C} \quad f_{\varphi}(\lambda \alpha) = \lambda f_{\varphi}(\alpha)
 	\end{equation}
 
-Questo significa che per ogni scelta di $\varphi$, $f_{\varphi}$ è un funzionale lineare da $\mathcal{H}$ a $\mathbb{C}$; indicheremo un funzionale lineare così costruito con la notazione $\bra{\varphi}$ e lo chiameremo \textit{bra}. L'insieme di tutti i \textit{bra} costituisce lo spazio duale $\mathcal{H}^{*}$ di  $\mathcal{H}$. Adottiamo le seguenti abbreviazioni sintattiche:
+Questo significa che per ogni scelta di $\varphi$, $f_{\varphi}$ è un funzionale lineare da $\mathcal{H}$ a $\mathbb{C}$; se $\varphi$ rappresenta uno stato, indicheremo un funzionale lineare così costruito con la notazione $\bra{\varphi}$ e lo chiameremo \textit{bra}. L'insieme di tutti i \textit{bra} costituisce lo spazio duale $\mathcal{H}^{*}$ di  $\mathcal{H}$. Adottiamo le seguenti abbreviazioni sintattiche:
 
 	\begin{equation}
 		\bra{\varphi}(\ket{\psi}) = (\bra{\varphi})\ket{\psi} \overset{def}{=} \braket{\varphi}{\psi}

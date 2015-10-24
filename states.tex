@@ -18,24 +18,32 @@ Infatti:
 
     \begin{equation} \label{eq:proofHard1}
         \bra{\psi} \hat{S} = \bra{\varphi} \iff 
-        \mel{\psi}{\hat{S}}{\psi} = \braket{\varphi}{\psi} \iff
-        \mel{\psi}{\hat{S}}{\psi}^* = \braket{\psi}{\varphi}
+        \mel{\psi}{\hat{S}}{\gamma} = \braket{\varphi}{\gamma} 
+	\end{equation}
+
+per un $\ket{\gamma}$ arbitrario. Dunque:
+
+	\begin{equation}
+		\bra{\psi} \hat{S} = \bra{\varphi} \iff
+        \mel{\psi}{\hat{S}}{\gamma}^* = \braket{\gamma}{\varphi}
     \end{equation}  
     
-Ma interpretando $\mel{\psi}{\hat{S}}{\psi}$ come $\left ( \bra{\psi} \hat{S} \right ) \ket{    \psi}$:
+Ma interpretando $\mel{\psi}{\hat{S}}{\gamma}$ come $\left ( \bra{\psi} \hat{S} \right ) \ket{\gamma}$:
 
     \begin{equation} \label{eq:proofHard2}
-        \mel{\psi}{\hat{S}}{\psi} = \left \langle \hat{S} \psi, \psi \right \rangle =
-        \left \langle \psi, \hat{S} \psi \right \rangle^* = \mel{\psi}{\hat{S}}{\psi}^*
+        \mel{\psi}{\hat{S}}{\gamma} = \left \langle \hat{S} \psi, \gamma \right \rangle =
+        \left \langle \gamma, \hat{S} \psi \right \rangle^* = \mel{\gamma}{\hat{S}}{\psi}^*
     \end{equation}
     
 A questo punto, sostituiamo la \eqref{eq:proofHard2} nella \eqref{eq:proofHard1}:
 
     \begin{equation} \label{eq:proofHard3}
-        \bra{\psi} \hat{S} = \bra{\varphi} \iff \mel{\psi}{\hat{S}}{\psi} = \braket{\psi}{\varphi} \iff \hat{S} \ket{\psi}  = \ket{\varphi}
+        \bra{\psi} \hat{S} = \bra{\varphi} \iff \mel{\gamma}{\hat{S}}{\psi} = \braket{\gamma}{\varphi} \iff \hat{S} \ket{\psi}  = \ket{\varphi}
     \end{equation}
 
-che \`e quello che volevamo dimostrare. Inoltre, analizzando la \eqref{eq:proofHard2}, scopriamo un altro fatto interessante, ovvero che se $\hat{S}$ \`e un operatore autoaggiunto, allora $\mel{\psi}{S}{\psi}$ \`e un numero reale, nessun numero complesso non reale può essere infatti uguale al suo coniugato.
+che \`e quello che volevamo dimostrare. 
+
+Considerando la \eqref{eq:proofHard2} per $\gamma = \psi$ scopriamo un altro fatto interessante, ovvero che se $\hat{S}$ \`e un operatore autoaggiunto, allora $\mel{\psi}{S}{\psi}$ \`e un numero reale, nessun numero complesso non reale può essere infatti uguale al suo coniugato.
 
 Con un argomento analogo possiamo dimostrare in generale che se $\hat{S}$ \`e un operatore, non necessariamente autoaggiunto, allora se $\hat{S} ^ \dagger$ \`e il suo aggiunto, ovvero il vettore tale che:
     
@@ -166,27 +174,27 @@ Confrontando la \eqref{eq:ketsSuperposition} e la \eqref{eq:brasSuperposition}, 
 
 \subsection{Interpretazione fisica del formalismo}
 
-La notazione bra-ket, oltre ad essere un utile strumento matematico, rappresenta una chiave di interpretazione del significato fisico delle predizioni della meccanica quantistica. Come già detto, un vettore rappresentato da un \textit{ket} $\ket{\psi}$ contiene il massimo dell'informazione che possiamo conoscere riguardo ad un determinato stato. 
+La notazione bra-ket, oltre ad essere un utile strumento matematico, rappresenta una chiave di interpretazione del significato fisico delle predizioni della meccanica quantistica. Un vettore rappresentato da un \textit{ket} $\ket{\psi}$ contiene il massimo dell'informazione che possiamo conoscere riguardo ad un determinato stato. 
 
-Il numero complesso 
+Sia $G$ una grandezza fisica. Se $\ket{\varphi}$ \`e un autovettore di $\hat{G}$, allora il numero complesso 
 
 	\[
 		\braket{\varphi}{\psi}
 	\]
 
-viene interpretato come l' \textit{ampiezza di probabilità} per una particella nello stato $\ket{\psi}$ di trovarsi nello stato $\ket{\varphi}$. L'\textit{ampiezza di probabilità} \`e collegata alla probabilità in modo analogo a come sono collegate l'ampiezza e l'intensità di un'onda: la grandezza fisica immediatamente percepibile \`e l'intensità, ma le interazioni sono descritte in termini di ampiezza.
+viene interpretato come l' \textit{ampiezza di probabilità} di ottenere l'autovalore associato a $\ket{\varphi}$ per un sistema nello stato $\ket{\psi}$ se viene effettuata una misurazione di $G$. L'\textit{ampiezza di probabilità} \`e collegata alla probabilità in modo analogo a come sono collegate l'ampiezza e l'intensità di un'onda: la grandezza fisica immediatamente percepibile \`e l'intensità, ma le interazioni sono descritte in termini di ampiezza.
 
-La probabilità di trovare una particella nello stato $\bra{\varphi}$ quando viene effettuata una misurazione su una particella nello stato $\bra{\psi}$ \`e data da:
+La probabilità di trovare un sistema nello stato $\bra{\varphi}$ quando viene effettuata una misurazione su una particella nello stato $\bra{\psi}$ \`e data da:
 
 	\begin{equation} \label{eq:braKetAsProbability}
-		\braket{\varphi}{\psi} \braket{\psi}{\varphi} = \left | \braket{g_i}{\psi} \right |^2
+		\braket{\varphi}{\psi} \braket{\psi}{\varphi} = \left | \braket{\varphi}{\psi} \right |^2
 	\end{equation}
 
 Notiamo che l'interpretazione data dalla \eqref{eq:braKetAsProbability} \`e consistente con la relazione formale espressa dalla \eqref{eq:probabilitySum}. Infatti, se una grandezza fisica $G$ può assumere i valori discreti $g_1, g_2, ..., g_n$, effettuando una misurazione di $G$ su una particella nello stato $\ket{\psi}$ possiamo non essere certi del risultato che otterremo, ma di certo dovremmo misurare uno dei $g_i$. In altre parole, detta $p_i$ la probabilità di ottenere il valore $g_i$ da tale misurazione, la somma di tutti i $p_i$ non potrà che essere 1.
 
-Un'ulteriore coincidenza con la realtà fisica si ottiene dall'analisi della \eqref{eq:orthonormalBasis}. Difatti, una particella si trova nello stato $\ket{g_k}$ se il suo valore della grandezza $G$ \`e conosciuto essere $g_k$. Ci aspettiamo dunque che se $i \neq j$ la probabilità di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_j}$ sia zero, e conseguentemente sia zero la relativa \textit{ampiezza di probabilità} $\braket{g_i}{g_j}$.
+Un'ulteriore coincidenza con la realtà fisica si ottiene dall'analisi della \eqref{eq:orthonormalBasis}. Difatti, un sistema si trova nello stato $\ket{g_k}$ se il suo valore della grandezza $G$ \`e conosciuto essere $g_k$. Ci aspettiamo dunque che se $i \neq j$ la probabilità di ottenere il valore $g_i$ per $G$ su un sistema nello stato $\ket{g_j}$ sia zero, e conseguentemente sia zero la relativa \textit{ampiezza di probabilità} $\braket{g_i}{g_j}$.
 
-Analogamente, \`e lecito aspettarsi che l'\textit{ampiezza di probabilità} di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_i}$ sia non-nulla. La scelta (convenzionale) di avere $\braket{g_i}{g_j} = 1$ \`e data dalla maggiore semplicità nel lavorare con una base ortonormale.
+Analogamente, \`e lecito aspettarsi che l'\textit{ampiezza di probabilità} di ottenere il valore $g_i$ per $G$ su una particella nello stato $\ket{g_i}$ sia 1. 
 
 La visione probabilistica espressa dalla \eqref{eq:braKetAsProbability} suggerisce una ulteriore riflessione sul formalismo matematico che stiamo impiegando. Siano $\ket{\psi}$ e $\ket{\psi ' }$ due \textit{ket} che differiscono soltanto per un fattore di fase globale, in altre parole tali che:
 
@@ -194,7 +202,7 @@ La visione probabilistica espressa dalla \eqref{eq:braKetAsProbability} suggeris
 		\ket{\psi '} = e^{i \zeta} \ket{\psi}
 	\end{equation}
 
-Valutiamo la probabilit\`a per una particella nello stato $\ket{\psi}$ di trovarsi nello stato $\bra{\varphi}$ come:
+Valutiamo la probabilit\`a per una particella nello stato $\ket{\psi}$ di trovarsi nello stato $\ket{\varphi}$ come:
 
 	\begin{equation}
 		\braket{\varphi}{\psi} \braket{\psi}{\varphi} = c^* c = \left | c \right | ^ 2
@@ -206,7 +214,7 @@ per qualche $c \in \mathbb{C}$. Sostituendo $\ket{\psi}$ con $\ket{\psi '}$ si o
 		\braket{\varphi}{\psi'} \braket{\psi'}{\varphi} = c^* e^{- i \zeta} c e^{i \zeta} = \left | c \right | ^ 2
 	\end{equation}
 
-Ovvero il medesimo valore ottenuto per $\ket{\psi}$. Dal momento che il nostro argomento non dipende dalla scelta di $\bra{\varphi}$, deduciamo che due stati che differiscano soltanto per un fattore di fase globale hanno la stessa probabilit\`a di trovarsi in qualsiasi stato: sono pertanto fisicamente indistinguibili.
+Ovvero il medesimo valore ottenuto per $\ket{\psi}$. Dal momento che la relazione precedente non dipende dalla scelta di $\bra{\varphi}$, deduciamo che due stati che differiscano soltanto per un fattore di fase generano probabilit\`a identiche rispetto alle misurazioni di $G$: sono pertanto fisicamente indistinguibili.
 
 La rappresentazione degli stati fisici come \textit{ket} sar\`a dunque unica a meno di un fattore di fase globale.
 
@@ -216,28 +224,28 @@ L'interpretazione probabilistica della \eqref{eq:braKetAsProbability} ci consent
 		\left \langle G \right \rangle = \sum_i g_i \left | \braket{g_i}{\psi} \right |^2
 	\end{equation}
 
-Possiamo anche vedere che se $G$ \`e una grandezza osservabile ed $\hat{G}$ \`e l'operatore associato a quella osservabile, allora il valore atteso $\left \langle G \right \rangle$ si può scrivere come
+Possiamo anche vedere che se $G$ \`e una grandezza osservabile e $\hat{G}$ \`e l'operatore associato a quella osservabile, allora il valore atteso $\left \langle G \right \rangle$ si può scrivere come
 
 	\[
-		\mel{\psi}{\hat{A}}{\psi}
+		\mel{\psi}{\hat{G}}{\psi}
 	\]
 
 Infatti, possiamo scrivere:
 
 	\begin{equation}
-		\mel{\psi}{\hat{A}}{\psi} = \left ( \sum c_i^* \bra{g_i} \right ) \hat{A} \left ( \sum c_i \ket{g_i} \right )
+		\mel{\psi}{\hat{G}}{\psi} = \left ( \sum c_i^* \bra{g_i} \right ) \hat{G} \left ( \sum c_i \ket{g_i} \right )
 	\end{equation}
 
 Da cui, dal momento che i vari $g_i$ sono autovettori di $G$:
 
 	\begin{equation}
-		\left ( \sum c_i^* \bra{a_1} \right ) \left ( \sum c_i g_i \ket{g_i} \right )
+		\left ( \sum_i c_i^* \bra{g_i} \right ) \left ( \sum_i c_i g_i \ket{g_i} \right )
 	\end{equation}
 
 che \`e uguale a:
 
 	\begin{equation}
-		\sum \left | c_i \right | ^2 = \left \langle G \right \rangle
+		\sum_i \left | c_i \right | ^2 g_i = \left \langle G \right \rangle
 	\end{equation}
 
 Ovvero esattamente quello che volevamo determinare.

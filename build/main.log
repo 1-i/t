@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.12)  16 OCT 2015 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.12)  24 OCT 2015 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1381,18 +1381,18 @@ LaTeX Warning: Label `eq:introducingGeneratorRot' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -1476,12 +1476,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1489,59 +1489,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [2])
-(./states.tex [3]
-Overfull \hbox (8.28761pt too wide) in paragraph at lines 98--99
-[]\OT1/cmr/m/n/10 Dove i co-ef-fi-ci-enti $(\OML/cmm/m/it/10 c[]; c[]; :::; c[]
-\OT1/cmr/m/n/10 )$ dipen-dono dallo stato che sti-amo con-siderando.
+(./states.tex [3] [4] [5] [6] [7]) (./matrix.tex [8] [9] [10]) (./operators.tex
+[11] [12]) (./spin.tex [13]
+Overfull \hbox (10.59256pt too wide) in paragraph at lines 61--62
+[]\OT1/cmr/m/n/10 Notiamo che $[]([]\OML/cmm/m/it/10 j\OT1/cmr/m/n/10 )$ non ^^
+Re au-toag-giunto, in-fatti se fosse $[]([]\OML/cmm/m/it/10 j\OT1/cmr/m/n/10 ) 
+= []([]\OML/cmm/m/it/10 j\OT1/cmr/m/n/10 )$ dovremmo
  []
 
-[4] [5] [6]
-Overfull \hbox (2.11424pt too wide) in paragraph at lines 219--220
-[]\OT1/cmr/m/n/10 Possiamo an-che vedere che se $\OML/cmm/m/it/10 G$ \OT1/cmr/m
-/n/10 ^^Re una grandezza os-serv-abile ed $[]$ ^^Re l'operatore
- []
-
-) (./matrix.tex [7] [8] [9]
-Overfull \hbox (4.59781pt too wide) in paragraph at lines 157--158
-[]\OT1/cmr/m/n/10 la quale con-ferma che $\OML/cmm/m/it/10 M$ \OT1/cmr/m/n/10 s
-i com-porta ef-fet-ti-va-mente come l'operatore prodotto
- []
-
-[10]) (./operators.tex [11] [12]) (./spin.tex [13] [14]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
-[15] [16] [17] [18] [19]
-Overfull \hbox (4.24889pt too wide) in paragraph at lines 429--430
-\OT1/cmr/m/n/10 versa, par-tendo da un vet-tore scritto in base $\OML/cmm/m/it/
-10 B[]$ \OT1/cmr/m/n/10 ed an-dando ad in-serire l'operatore
- []
-
-) (./angm.tex [20] [21] [22] [23]
+[15] [16] [17] [18] [19]) (./angm.tex [20] [21] [22]
 Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
-[24] [25] [26]
-Overfull \hbox (2.34705pt too wide) in paragraph at lines 397--398
-[]\OT1/cmr/m/n/10 La prece-dente ^^Re nec-es-saria perch^^Se al-tri-menti $[]$ 
-creerebbe uno stato $[]$,
- []
-
-
-Overfull \hbox (1.47122pt too wide) in paragraph at lines 433--434
-[]\OT1/cmr/m/n/10 Analogamente, se defini-amo $\OML/cmm/m/it/10 j[]$ \OT1/cmr/m
-/n/10 come il min-imo val-ore pos-si-bile per $\OML/cmm/m/it/10 m$ \OT1/cmr/m/n
-/10 dovremo
- []
-
-[27] [28]) (./twopart.tex [29] [30]
+[23] [24] [25] [26] [27]) (./twopart.tex [28] [29]
 Overfull \hbox (6.10286pt too wide) in paragraph at lines 121--121
 []\OT1/cmr/bx/n/12 Paradosso di Einstein-Podolsky-Rosen e dis-ug-uaglianze
  []
 
-[31] [32] [33]) [34] [35] (./main.aux)
+[30]
+Overfull \hbox (2.5562pt too wide) in paragraph at lines 138--139
+[]\OT1/cmr/m/n/10 Prendendo ad es-em-pio la situ-azione de-scritta dal para-dos
+so di Einstein-Podolsky-
+ []
+
+[31]
+Overfull \hbox (0.41734pt too wide) in paragraph at lines 159--160
+[]\OT1/cmr/m/n/10 Vogliamo di-mostrare che questo mod-ello pro-duce risul-tati 
+con-trad-dit-tori rispetto
+ []
+
+[32] [33]) [34] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1549,35 +1532,37 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  8171 strings out of 495025
  148395 string characters out of 6181515
- 199591 words of memory out of 5000000
+ 198593 words of memory out of 5000000
  11244 multiletter control sequences out of 15000+600000
  14688 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 45i,13n,39p,10405b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm7.pfb>
-Output written on main.pdf (35 pages, 297135 bytes).
+ 45i,13n,39p,10432b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm7.pfb>
+Output written on main.pdf (34 pages, 313927 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 206 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

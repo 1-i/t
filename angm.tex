@@ -10,7 +10,7 @@ Innanzitutto, dal momento che la rotazione avviene attorno all'asse $z$, \`e evi
 		A'_z = A_z
 	\end{equation}
 
-Dal momento che $A'$ deve essere uguale in modulo ad $A$ e vale la \eqref{eq:rotMatrixZ}, anche il moduli delle proiezioni di $A$, $A'$ sul piano $xy$ devono essere uguali. Possiamo quindi calcolare $A'_x$ come:
+Dal momento che $A'$ deve essere uguale in modulo ad $A$ e vale la \eqref{eq:rotMatrixZ}, anche i moduli delle proiezioni di $A$, $A'$ sul piano $xy$ devono essere uguali. Possiamo quindi calcolare $A'_x$ come:
 
 	\begin{equation}
 		A'_x = \left | A \right |_{xy} \cos \alpha
@@ -103,9 +103,9 @@ Per verificare la non-commutativit\`a delle rotazioni, prendiamo lo sviluppo di 
 	\begin{equation}
 		S(\Delta \varphi j) = 
 		\left ( \begin{array}{c c c}
-			1 - \Delta \varphi^2 & 0 & \Delta \varphi \\
+			1 - \Delta \varphi^2 / 2 & 0 & \Delta \varphi \\
 			0 & 1 & 0 \\
-			-\Delta \varphi & 0 & 1 - \Delta \varphi^2 \\
+			-\Delta \varphi & 0 & 1 - \Delta \varphi^2 / 2 \\
 		\end{array} \right )
 	\end{equation}
 
@@ -125,8 +125,8 @@ da cui deduciamo che gli operatori di rotazione non commutano. Se eliminiamo tut
 	\begin{equation}
 		S(\Delta \varphi^2 k) = 
 		\left ( \begin{array}{c c c}
-			1 & \Delta \varphi^2 & 0\\
-			-\Delta \varphi^2 & 1 & 0 \\
+			1 & - \Delta \varphi^2 & 0\\
+			\Delta \varphi^2 & 1 & 0 \\
 			0 & 0 & 1 \\
 		\end{array} \right )
 	\end{equation}
@@ -144,7 +144,7 @@ Quest'ultima relazione \`e significativa per dedurre il commutatore dei generato
 		\quad \hat{R} ( \varphi j ) = e^{-i \hat{J}_y \varphi / \hbar } 
 	\end{equation}
 
-Dunque, prendendo l'espansione al secondo ordine degli operatori e sostituendoli nella \eqref{eq:rotationOperatorsComm} abbiamo:
+Dunque, prendendo lo sviluppo al secondo ordine degli operatori e sostituendoli nella \eqref{eq:rotationOperatorsComm} abbiamo:
 
 	\begin{equation}
 		\begin{array}{r l}
@@ -178,7 +178,7 @@ Naturalmente, valgono anche le analoghe alla precedente ottenute per rotazione c
 
 \subsection{Operatori commutativi}
 
-Consideriamo due operatori lineari autoaggiunti $\hat{A}$, $\hat{B}$ che soddisfino
+Consideriamo due operatori lineari $\hat{A}$, $\hat{B}$ che soddisfino
 
 	\begin{equation} \label{eq:commutativeOperators}
 		\left [ \hat{A}, \hat{B} \right ] \overset{def}{=} \hat{A}\hat{B} - \hat{B}\hat{A} = 0
@@ -218,10 +218,10 @@ dove $b$ \`e una costante, dal momento che se $\ket{a}$ soddisfa la \eqref{eq:as
 
 Se esiste pi\`u di un autostato dell'operatore $\hat{A}$ con autovalore $a$, ci troviamo in un caso \textit{degenere}. In un caso \textit{degenere}, si possono sempre trovare combinazioni lineari degli stati degeneri di $\hat{A}$ che sono autostati dell'operatore $\hat{B}$, implicando che due operatori lineari autoaggiunti che commutano hanno sempre un insieme completo di autostati in comune. Questo risultato \`e una conseguenza del teorema spettrale.
 
-Come abbiamo visto, i generatori di rotazioni su diversi assi non commutano, ma l'operatore:
+Come abbiamo visto, i generatori di rotazioni attorno ad assi diversi non commutano, ma l'operatore:
 
 	\begin{equation}
-		\hat{J}^2 = \hat{J} \cdot \hat{J} = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2
+		\mathbf{\hat{J}^2} = \hat{J} \cdot \hat{J} = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2
 	\end{equation}
 
 commuta con ciascuno dei generatori. Per dimostrarlo, prendiamo ad esempio il generatore $\hat{J}_z$. Utilizzeremo l'identit\`a
@@ -239,7 +239,7 @@ Scriviamo:
 Per la \eqref{eq:commutatorsTrick}, $\left [ \hat{J}_z, \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2 \right ]$ si scrive come:
 
 	\begin{equation}
-	 \hat{J}_x \left [ \hat{J}_z, \hat{J}_x \right ] + \left [ \hat{J}_z + \hat{J}_x \right ] \hat{J}_x + \hat{J}_y \left [ \hat{J}_z, \hat{J}_y \right ] + \left [ \hat{J}_z + \hat{J}_y \right ] \hat{J}_y 
+	 \hat{J}_x \left [ \hat{J}_z, \hat{J}_x \right ] + \left [ \hat{J}_z , \hat{J}_x \right ] \hat{J}_x + \hat{J}_y \left [ \hat{J}_z, \hat{J}_y \right ] + \left [ \hat{J}_z , \hat{J}_y \right ] \hat{J}_y 
 	\end{equation}
 
 che diventa:
@@ -248,11 +248,11 @@ che diventa:
 		i \hbar \left ( \hat{J}_x \hat{J}_y + \hat{J}_y \hat{J}_x - \hat{J}_y \hat{J}_x - \hat{J}_x \hat{J}_y \right ) = 0
 	\end{equation}
 
-Ora, dal momento che l'operatore $\hat{J}^2$ commuta con $\hat{J}_z$, devono avere autostati in comune. Siano i ket $\ket{\lambda}$, $\ket{m}$ tali che;
+Ora, dal momento che l'operatore $\mathbf{\hat{J}^2}$ commuta con $\hat{J}_z$, devono avere autostati in comune. Siano i ket $\ket{\lambda}$, $\ket{m}$ tali che;
 
 	\begin{equation} \label{eq:commutationRelation}
 		\begin{array} {c}
-			\hat{J}^2 \ket{\lambda, m} = \lambda \hbar^2 \ket{\lambda, m} \\
+			\mathbf{\hat{J}^2} \ket{\lambda, m} = \lambda \hbar^2 \ket{\lambda, m} \\
 			\hat{J}_z \ket{\lambda, m} = m \hbar \ket{\lambda, m}
 		\end{array}
 	\end{equation}
@@ -260,10 +260,10 @@ Ora, dal momento che l'operatore $\hat{J}^2$ commuta con $\hat{J}_z$, devono ave
 Dove le dimensioni sono esplicitamente indicate, in maniera tale che $\lambda$ ed $m$ risultino adimensionali. Quindi, $\ket{\lambda, m}$ \`e uno stato per cui la misurazione della componente $z$ del momento angolare restituisce il valore $m \hbar$, mentre il modulo quadro del momento angolare risulta essere $\lambda \hbar^2$. Possiamo anche vedere che $\lambda \ge 0$, consistentemente con l'interpretazione per cui $\lambda \hbar^2$ sia il modulo quadro del momento angolare. Applichiamo $\bra{\lambda, m}$ ad entrambi i lati della \eqref{eq:commutationRelation}:
 
 	\begin{equation}
-		\mel{\lambda, m}{\hat{J}^2}{\lambda, m} = \lambda \hbar^2 \braket{\lambda, m}{\lambda, m}
+		\mel{\lambda, m}{\mathbf{\hat{J}^2}}{\lambda, m} = \lambda \hbar^2 \braket{\lambda, m}{\lambda, m}
 	\end{equation}
 
-Come per ogni stato, $\braket{\lambda, m}{\lambda, m} = 1$. Scomponendo LHS, otterremo termini analoghi a:
+Come per ogni stato, $\braket{\lambda, m}{\lambda, m} = 1$. Scomponendo il membro sinistro, otterremo termini analoghi a:
 
 	\begin{equation} 
 		\mel{\lambda, m}{\hat{J}_x^2}{\lambda, m}
@@ -355,22 +355,21 @@ Con analoghi calcoli possiamo far vedere che:
 	\end{equation}
 
 Ovvero che $\hat{J}_- \ket{\lambda, m}$ \`e un autostato di $\hat{J}_z$ con autovalore $(m-1) \hbar$. Intuitivamente, i due operatori ``scalano'' lo stato su cui operano di un livello, e sono pertanto detti ``di scala''.
-Notiamo che, come lecito aspettarsi, $\hat{J}_\pm \ket{\lambda, m}$ sono ancora autostati dell'operatore $\hat{J}^2$ con autovalore $\lambda \hbar^2$. Infatti, siccome
+Notiamo che, come lecito aspettarsi, $\hat{J}_\pm \ket{\lambda, m}$ sono ancora autostati dell'operatore $\mathbf{\hat{J}^2}$ con autovalore $\lambda \hbar^2$. Infatti, siccome
 
 	\begin{equation}
-		\left [ \hat{J}^2, J_x \right ] = 0 \quad e \quad \left [ \hat{J}^2, J_y \right ] = 0
+		\left [ \mathbf{\hat{J}^2}, J_x \right ] = 0 \quad e \quad \left [ \mathbf{\hat{J}^2}, J_y \right ] = 0
 	\end{equation}
 
-Gli operatori $\hat{J}_+, \hat{J}_-$ comutano con $\hat{J}^2$, quindi:
+Gli operatori $\hat{J}_+, \hat{J}_-$ comutano con $\mathbf{\hat{J}^2}$, quindi:
 
 	\begin{equation}
-		\hat{J}^2 \left ( \hat{J}_\pm \ket{\lambda, m} \right ) = \hat{J}_\pm \hat{J}^2 \ket{\lambda, m} = \lambda \hbar^2 \left (
+		\mathbf{\hat{J}^2} \left ( \hat{J}_\pm \ket{\lambda, m} \right ) = \hat{J}_\pm \mathbf{\hat{J}^2} \ket{\lambda, m} = \lambda \hbar^2 \left (
 			\hat{J}_\pm \ket{\lambda, m} \right )
 	\end{equation}
 
 \subsection{Spettro degli autovalori}
-
-Possiamo ora determinare gli autovalori $\lambda$ ed $m$. Un vincolo di natura fisica ci \`e dato dal fatto che il quadrato della proiezione del momento angolare su ciascuno degli assi non deve eccedere il modulo di $\hat{J}^2$. Dal momento che:
+Possiamo ora determinare gli autovalori $\lambda$ ed $m$. Un vincolo di natura fisica ci \`e dato dal fatto che il quadrato della proiezione del momento angolare su ciascuno degli assi non deve eccedere il modulo di $\mathbf{\hat{J}^2}$. Dal momento che:
 
 	\begin{equation}
 		\mel{\lambda, m}{\left ( \hat{J}^2_x + \hat{J}^2_y \right )}{\lambda, m} \ge 0
@@ -379,7 +378,7 @@ Possiamo ora determinare gli autovalori $\lambda$ ed $m$. Un vincolo di natura f
 abbiamo:
 
 	\begin{equation}
-		\mel{\lambda, m}{\left ( \hat{J}^2 - \hat{J}^2_z \right )}{\lambda, m} = \left ( \lambda - m^2 \right ) \hbar^2 \braket{\lambda, m}{\lambda, m} \ge 0
+		\mel{\lambda, m}{\left ( \mathbf{\hat{J}^2} - \hat{J}^2_z \right )}{\lambda, m} = \left ( \lambda - m^2 \right ) \hbar^2 \braket{\lambda, m}{\lambda, m} \ge 0
 	\end{equation}
 
 che implica:
@@ -409,13 +408,13 @@ da cui:
 svolgendo il commutatore:
 
 	\begin{equation} \label{eq:raisLowComp}
-		\hat{J}_- \hat{J}_+	= \hat{J}^2 - \hat{J}_z^2 - \hbar \hat{J}_z
+		\hat{J}_- \hat{J}_+	= \mathbf{\hat{J}^2} - \hat{J}_z^2 - \hbar \hat{J}_z
 	\end{equation}
 
 Possiamo vedere, applicando la \eqref{eq:raisLowComp}, che:
 
 	\begin{equation}
-		\hat{J}_- \hat{J}_+ \ket{\lambda, j} = \left ( \hat{J}^2 - \hat{J}_z^2 - \hbar \hat{J}_z \right ) \ket{\lambda, j}
+		\hat{J}_- \hat{J}_+ \ket{\lambda, j} = \left ( \mathbf{\hat{J}^2} - \hat{J}_z^2 - \hbar \hat{J}_z \right ) \ket{\lambda, j}
 	\end{equation}
 
 che si riscrive come:
@@ -442,7 +441,7 @@ Notiamo che:
 		\begin{array}{c c l}
 			\hat{J}_+ \hat{J}_- & = & \left ( \hat{J}_x + i \hat{J}_y \right ) \left ( \hat{J}_x - i \hat{J}_y \right ) \\
 			& = & \hat{J}^2_x + \hat{J}^2_y - i \left [ \hat{J}_x, \hat{J}_y \right ] \\
-			& = & \hat{J}^2 - \hat{J}^2_z + \hbar \hat{J}_z
+			& = & \mathbf{\hat{J}^2} - \hat{J}^2_z + \hbar \hat{J}_z
 		\end{array}
 	\end{equation}
 
@@ -450,7 +449,7 @@ Da cui possiamo dedurre:
 
 	\begin{equation}
 		\begin{array}{c c l}
-			\hat{J}_+ \hat{J}_- \ket{\lambda, j'} & = & \left ( \hat{J}^2 - \hat{J}_z^2 + \hbar \hat{J}_z \right ) \ket{\lambda, j'}\\
+			\hat{J}_+ \hat{J}_- \ket{\lambda, j'} & = & \left ( \mathbf{\hat{J}^2} - \hat{J}_z^2 + \hbar \hat{J}_z \right ) \ket{\lambda, j'}\\
 
 		& = & \left ( \lambda - j'^2 + j' \right ) \hbar^2 \ket{\lambda, j'} = 0
 		\end{array}
@@ -501,7 +500,7 @@ In altre parole, $j = k/2$ per qualche $k$ intero. I valori possibili per $j$ so
 mentre i valori possibili di $m$ sono dati da:
 
 	\begin{equation}
-		m \in \left \{ j, j-1, j-2, ... -j \right \}
+		m \in \left \{ j, j-1, j-2, ..., -j \right \}
 	\end{equation}
 
 Dal momento che i generatori di rotazione corrispondono agli operatori di spin, li indicheremo con $S_x, S_y, S_z$. Nell'utilizzare questa notazione, convenzionalmente si indicano gli stati come:
@@ -519,7 +518,7 @@ invece che come
 Prendendo $s$ tale che $s(s+1) = \lambda$ in maniera da avere:
 
 	\begin{equation}
-		\hat{S}^2 \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
+		\mathbf{\hat{S}^2} \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
 	\end{equation}
 
 In questo modo i valori di $s$ corrispondono allo spin totale della particella, ad esempio, i due stati

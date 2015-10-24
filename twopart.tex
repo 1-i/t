@@ -1,6 +1,6 @@
 \section{Sistemi di due particelle a spin 1/2}
 
-	Passiamo ora a considerare un sistema di due particelle, ciascuna con spin $\tfrac{1}{2}$. Sistemi di questo tipo sono estremamente comuni, ad esempio l'interazione di un protone e di un elettrone. La scelta pi\`u naturale della base di riferimento \`e quella di rappresentare gli stati con il valore di $S_z$ per ciascuna delle particelle:
+	Passiamo ora a considerare un sistema di due particelle, ciascuna con spin $\tfrac{1}{2}$. La scelta pi\`u naturale della base di riferimento \`e quella di rappresentare gli stati con il valore di $S_z$ per ciascuna delle particelle:
 
 	\begin{equation} \label{eq:twoPartState}
 		\ket{+z, +z} \quad \ket{+z, -z} \quad \ket{-z, +z} \quad \ket{-z, -z}
@@ -21,21 +21,21 @@ Siccome entrambi gli insiemi formano delle basi dello spazio dei \textit{ket}, s
 Un altro modo di effettuare la trasformazione \`e quello di applicare i generatori di rotazione per ciascuna delle particelle. Indicheremo i generatori della prima particella che, come abbiamo visto, coincidono con gli operatori associati al momento angolare con:
 
 	\begin{equation}
-		\hat{S}_1 = \hat{S}_{1x} i + \hat{S}_{1y} j + \hat{S}_{1z} k
+		\mathbf{\hat{S}_1} = \hat{S}_{1x} i + \hat{S}_{1y} j + \hat{S}_{1z} k
 	\end{equation}
 
 E similmente per la seconda particella. Dal momento che possiamo ruotare le due particelle indipendentemente l'una dall'altra, i due generatori devono commutare:
 
 	\begin{equation}
-		\left [ \hat{S}_1, \hat{S}_2 \right ] = 0
+		\left [ \mathbf{\hat{S}_1}, \mathbf{\hat{S}_2} \right ] = 0
 	\end{equation}
 
 \subsection{Composizione dei momenti angolari di due particelle a spin 1/2}
 
-Vogliamo risolvere il problema del momento angolare per un sistema di due particelle. Detti $S_1$, $S_2$ gli operatori di spin delle due particelle, questo equivale a determinare gli autostati di:
+Vogliamo risolvere il problema del momento angolare per un sistema di due particelle. Detti $\mathbf{S_1}$, $\mathbf{S_2}$ gli operatori di spin delle due particelle, questo equivale a determinare gli autostati di:
 
 	\begin{equation}
-		\hat{S}^2 = ( \hat{S}_1 + \hat{S}_2 ) ^ 2 = \hat{S}_1^2 + \hat{S}_2^2 + 2 \hat{S}_1 \hat{S}_2
+		\mathbf{\hat{S}^2} = ( \mathbf{\hat{S}_1} + \mathbf{\hat{S}_2} ) ^ 2 = \mathbf{\hat{S}_1}^2 + \mathbf{\hat{S}_2}^2 + 2 \mathbf{\hat{S}_1} \cdot \mathbf{\hat{S}_2}
 	\end{equation}
 
 e di:
@@ -47,7 +47,7 @@ e di:
 Come abbiamo visto, possiamo scrivere (usando la notazione $(s, m)$ che abbiamo introdotto):
 
 	\begin{equation}
-		\hat{S}^2 \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
+		\mathbf{\hat{S}^2} \ket{s, m} = s(s+1) \hbar^2 \ket{s, m}
 	\end{equation}
 
 e
@@ -59,16 +59,16 @@ e
 Dal momento che:
 
 	\begin{equation}
-		\hat{S}_1^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
+		\mathbf{\hat{S}_1}^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
 	\end{equation}
 
 e
 
 	\begin{equation}
-		\hat{S}_1^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
+		\mathbf{\hat{S}_2}^2 \ket{\pm z, \pm z} = \tfrac{1}{2} ( \tfrac{1}{2} + 1 ) \hbar^2 \ket{\pm z, \pm z}
 	\end{equation}
 
-possiamo vedere che gli autostati di $2 \hat{S}_1 \hat{S}_2$ sono anche autostati di $S^2$. Consideriamo ora i seguenti stati:
+possiamo vedere che gli autostati di $2 \hat{S}_1 \cdot \hat{S}_2$ sono anche autostati di $S^2$. Consideriamo ora i seguenti stati:
 
 	\begin{equation}
 		\begin{array}{c}
@@ -78,7 +78,7 @@ possiamo vedere che gli autostati di $2 \hat{S}_1 \hat{S}_2$ sono anche autostat
 		\end{array}
 	\end{equation}
 
-Si pu\`o mostrare che ciascuno di essi \`e autostato di $2 \hat{S}_1 \hat{S}_2$ con autovalore $\hbar / 2$. Saranno dunque anche autostati di $\hat{S}^2$ con autovalore:
+Si pu\`o mostrare che ciascuno di essi \`e autostato di $2 \hat{S}_1 \cdot \hat{S}_2$ con autovalore $\hbar / 2$. Saranno dunque anche autostati di $\hat{S}^2$ con autovalore:
 
 	\begin{equation}
 		\left [	\frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \right ] \hbar^2 = 2 \hbar^2
@@ -92,7 +92,7 @@ Lo stato:
 		\end{array}
 	\end{equation}
 
-\`e invece autostato di $2 \hat{S}_1 \hat{S}_2$ con autovalore $-3/2 \hbar$, il suo autovalore associato a $\hat{S}^2$ sar\`a dunque:
+\`e invece autostato di $2 \mathbf{\hat{S}_1} \cdot \mathbf{\hat{S}_2}$ con autovalore $-3/2 \hbar$, il suo autovalore associato a $\mathbf{\hat{S}^2}$ sar\`a dunque:
 
 	\begin{equation}
 		\left [	\frac{1}{2} \left ( \frac{1}{2} + 1 \right ) + \frac{1}{2} \left ( \frac{1}{2} + 1 \right ) - \frac{3}{2} \right ] \hbar^2 = 0
@@ -118,16 +118,22 @@ e
 		\ket{0, 0} = \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z}
 	\end{equation}
 
-\subsection{Paradosso di Einstein-Podolsky-Rosen e disuguaglianze di Bell}
+\subsection{Argomentazione di Einstein-Podolsky-Rosen e disuguaglianze di Bell}
 
-	Consideriamo una particella a spin-0 a riposo, e supponiamo che decada in due particelle, ciascuna a spin-$\tfrac{1}{2}$. Perch\`e la quantit\`a di moto totale sia conservata, le due particelle devono muoversi in direzioni opposte. Inoltre, perch\`e il momento angolare totale sia conservato, le due particelle devono trovarsi nello stato $\ket{0, 0}$. Supponiamo che due sperimentatori $A$ e $B$ siano posizionati sulle traiettorie delle due particelle, con lo scopo di effettuare una misura dello spin $S_z$ sulle relative particelle.
+	Consideriamo una particella a spin-0 a riposo, e supponiamo che decada in due particelle $p_1$ e $p_2$, ciascuna a spin-$\tfrac{1}{2}$. Perch\`e la quantit\`a di moto totale sia conservata, le due particelle devono muoversi in direzioni opposte. Inoltre, perch\`e il momento angolare totale sia conservato, le due particelle devono trovarsi nello stato $\ket{0, 0}$. Supponiamo che due sperimentatori $A$ e $B$ siano posizionati sulle traiettorie delle due particelle, con lo scopo di effettuare una misura dello spin $S_z$ sulle relative particelle.
 Dal momento che, come abbiamo visto, lo stato $\ket{0, 0}$ si scrive:
 
 	\[
-		\ket{0, 0}  = \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z}
+		\begin{array}{l c r}
+			\ket{0, 0} & = & \frac{1}{\sqrt{2}} \ket{+z, -z} - \frac{1}{\sqrt{2}} \ket{-z, +z} \\
+			& = & \frac{1}{\sqrt{2}} \ket{+x, -x} - \frac{1}{\sqrt{2}} \ket{-x, +x}
+		\end{array}
 	\]
 
-Dalla precedente possiamo vedere che se $A$ esegue una misurazione, ha il 50\% di probabilit\`a di trovare $S_{1z} = \hbar / 2$ e il 50\% di probabilit\`a di trovare $S_{1z} = - \hbar / 2$. La medesima situazione si verifica, ovviamente, se gli sperimentatori decidono di misurare lo spin lungo altri assi. Siccome lo stato globale del sistema deve essere necessariamente $\ket{0, 0}$, la misurazione di $S_z$ determina globalmente lo stato del sistema. In altre parole, conoscendo il risultato della misura di $A$, siamo in grado di prevedere con certezza quale sar\`a il valore rilevato da $B$. Il fatto sconcertante \`e che l'argomento che abbiamo mostrato fa alcuna assunzione sul modo in cui le particelle interagiscono: anche se la particella misurata da $B$ fosse in una posizione sconosciuta da $A$, una singola misura determina lo stato di \textit{entrambe}, in netta contraddizione con il \textit{principio di localit\`a} ovvero l'assunzione, completamente ragionevole nella nostra esperienza ed adottata anche nella fisica classica, che un oggetto sia influenzato soltanto dalle sue immediate vicinanze e non da altri oggetti molto distanti nello spazio. 
+Se $A$ esegue una misurazione dello spin lungo l'asse $x$, ha probabilit\`a 1/2 di trovare $S_{1z} = \hbar / 2$ e probabilit\`a 1/2 di trovare $S_{1z} = - /hbar / 2$. 
+
+%Dalla precedente possiamo vedere che se $A$ esegue una misurazione, ha il 50\% di probabilit\`a di trovare $S_{1z} = \hbar / 2$ e il 50\% di probabilit\`a di trovare $S_{1z} = - \hbar / 2$. La medesima situazione si verifica, ovviamente, se gli sperimentatori decidono di misurare lo spin lungo altri assi. Siccome lo stato globale del sistema deve essere necessariamente $\ket{0, 0}$, la misurazione di $S_z$ determina globalmente lo stato del sistema. In altre parole, conoscendo il risultato della misura di $A$, siamo in grado di prevedere con certezza quale sar\`a il valore rilevato da $B$. Il fatto sconcertante \`e che l'argomento che abbiamo mostrato fa alcuna assunzione sul modo in cui le particelle interagiscono: anche se la particella misurata da $B$ fosse in una posizione sconosciuta da $A$, una singola misura determina lo stato di \textit{entrambe}, in netta contraddizione con il \textit{principio di localit\`a} ovvero l'assunzione, completamente ragionevole nella nostra esperienza ed adottata anche nella fisica classica, che un oggetto sia influenzato soltanto dalle sue immediate vicinanze e non da altri oggetti molto distanti nello spazio. 
+
 Quest'ultimo punto in particolare venne interpretato come completamente irragionevole dai fisici dell'epoca, si tent\`o infatti di superare il paradosso per mezzo delle cosiddette \textit{teorie delle variabili nascoste}.
 
 Il concetto fondamentale alla base di una teoria a variabili nascoste \`e che a differenza dell'interpretazione convenzionale della meccanica quantistica, ogni particella porti con s\'e una serie di variabili che determinano univocamente il risultato della misura di qualsiasi grandezza fisica sulla particella stessa.
@@ -262,7 +268,7 @@ Dunque, la probabilit\`a complessiva di ottenere spin di segno opposto misurando
 Supponiamo di prendere gli assi $a, b, c$ ruotati di 120 gradi l'uno rispetto all'altro. Allora, la situazione \`e completamente simmetrica a quella che abbiamo descritto precedentemente per ogni possibile scelta di assi distinti. Valutando la \eqref{eq:paradox} per $\vartheta_{ab} = \pi / 3$ si ottiene:
 
 	\begin{equation}
-		cos^2 \frac{\pi}{6} = \frac{1}{4}
+		\cos^2 \frac{\pi}{6} = \frac{1}{4}
 	\end{equation}
 
 L'equazione precedente \`e in completo disaccordo con la predizione effettuata dalla teoria a variabili nascoste che abbiamo sviluppato fino ad ora: una delle due deve essere sbagliata ed un esperimento in laboratorio pu\'o decidere quale delle due sia in errore.

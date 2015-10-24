@@ -41,7 +41,7 @@ Essendo $B$ una base ortonormale, evidentemente si avrà che per ciascuno dei co
 		\right ) = e_k
 	\end{equation}
 
-È possibile rappresentare in maniera analoga un \textit{bra}? Una scelta naturale della base è la base duale di $B$, $B^*$. Infatti, come abbiamo determinato dal raffronto delle \eqref{eq:ketsSuperposition}, \eqref{eq:brasSuperposition} i coefficienti di $\bra{\psi}$ in $B^*$ saranno i complessi coniugati dei coefficienti di $\ket{\psi}$ in $B$. È però più conveniente rappresentare i \textit{bra} come matrici riga. Scrivendo:
+È possibile rappresentare in maniera analoga un \textit{bra}? Una scelta naturale della base è la base duale di $B$, $B^*$. Infatti, come abbiamo determinato dal raffronto delle \eqref{eq:ketsSuperposition}, \eqref{eq:brasSuperposition} i coefficienti di $\bra{\psi}$ in $B^*$ saranno i complessi coniugati dei coefficienti di $\ket{\psi}$ in $B$. Rappresenteremo per\`o i \textit{bra} come matrici riga. Scrivendo:
 
 	\begin{equation} \label{eq:braRowMatrix}
 		\bra{\varphi} = \left ( \begin{array}{c c c c c}
@@ -85,16 +85,16 @@ La \eqref{eq:ketColumnMatrix} e la \eqref{eq:braRowMatrix} ci consentono di scri
 		\end{array} \right )_{B^*}
 	\end{equation}
 
-Svolgendo il prodotto ad RHS nella \eqref{eq:ketbraMatrixProduct} otteniamo, come lecito aspettarsi da un operatore lineare, una matrice $M \in \mathbb{C}^{n \times n}$:
+Svolgendo il prodotto al membro destro nella \eqref{eq:ketbraMatrixProduct} otteniamo, come lecito aspettarsi da un operatore lineare, una matrice $M \in \mathbb{C}^{n \times n}$:
 
 	\begin{equation}
 		M_{ij} = \braket{g_i}{\psi} \braket{\varphi}{g_j}
 	\end{equation}
 
-Per verificare la consistenza di questa notazione, consideriamo un vettore $\ket{\zeta}$ e calcoliamo $M \ket{\zeta}$:
+Per verificare la consistenza di questa notazione, consideriamo un vettore $\ket{\zeta}$ e calcoliamo $M \ket{\alpha}$:
 
 	\begin{equation} \label{eq:matrixDer1}
-		M \ket{\zeta} = \left ( \begin{array}{c}
+		M \ket{\alpha} = \left ( \begin{array}{c}
 				\braket{g_1}{\psi} \sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} \\
 				... \\
 				\braket{g_k}{\psi} \sum_i \braket{\varphi}{g_i} \braket{g_i}{\alpha} \\
@@ -131,7 +131,7 @@ Quindi la \eqref{eq:matrixDer2} diventa
 Sostituendo la \eqref{eq:matrixDer3} nella \eqref{eq:matrixDer1}:
 
 	\begin{equation}
-			M \ket{\zeta} = \left ( \begin{array}{c}
+			M \ket{\alpha} = \left ( \begin{array}{c}
 				\braket{g_1}{\psi} \braket{\varphi}{\alpha} \\
 				... \\
 				\braket{g_k}{\psi} \braket{\varphi}{\alpha} \\
@@ -151,7 +151,7 @@ Sostituendo la \eqref{eq:matrixDer3} nella \eqref{eq:matrixDer1}:
 Quest'ultima si riscrive come:
 
 	\begin{equation}
-		M \ket{\zeta} = \braket{\varphi}{\alpha} \ket{\psi}
+		M \ket{\alpha} = \braket{\varphi}{\alpha} \ket{\psi}
 	\end{equation}
 
 la quale conferma che $M$ si comporta effettivamente come l'operatore prodotto esterno definito nella \eqref{eq:outerProduct}.
@@ -162,7 +162,7 @@ Più in generale, consideriamo il problema della rappresentazione in forma matri
 		\hat{A} \ket{\psi} = \ket{\phi}
 	\end{equation}
 
-Come già ampiamente giustificato, data una base $B = (g_1, g_2, ..., g_n)$ possiamo scrivere:
+Come già ampiamente giustificato, data una base $B = (\ket{g_1}, \ket{g_2}, ..., \ket{g_n})$ possiamo scrivere:
 
 	\begin{equation}
 		\ket{\psi} = \sum_i \ket{g_i} \braket{g_i}{\psi}
@@ -228,7 +228,7 @@ e
 		\right ) = \ket{\varphi}
 	\end{equation}
 
-Abbiamo dunque dedotto che un generico operatore $\hat{A}$ può essere scritto come una matrice
+Abbiamo dunque dedotto che un generico operatore $\hat{A}$ può essere rappresentato da una matrice
 
 	\begin{equation} \label{eq:matricialFormOperator}
 		M_{ij} = \mel{g_i}{\hat{A}}{g_j} 
@@ -258,7 +258,7 @@ E il prodotto della seconda con $\ket{\chi}$:
 		\mel{\psi}{\hat{A}}{\chi}
 	\end{equation}
 
-Ora siccome $\braket{\chi}{\varphi} = \braket{\chi}{\varphi}^*$ abbiamo
+Ora siccome $\braket{\chi}{\varphi} = \braket{\varphi}{\chi}^*$ abbiamo
 
 	\begin{equation} \label{eq:hermitianConj}
 		\mel{\psi}{\hat{A}}{\chi} = \mel{\chi}{\hat{A}}{\psi}^*

@@ -1,9 +1,9 @@
 \section{Particelle di spin $\frac{1}{2}$}
 
-Avendo stabilito un formalismo matematico che ci consenta di operare sui fenomeni fisici, passiamo a considerare alcuni casi semplici.
+Avendo stabilito un formalismo matematico, passiamo a considerare alcuni casi semplici.
 Nel 1922, Otto Stern e Walther Gerlach effettuarono un esperimento che fornì evidenza diretta di uno degli strani fenomeni osservabili nel mondo microscopico.
 L'apparato sperimentale era costituito da un forno in cui veniva fatto evaporare argento, facendo uscire un fascio di particelle da un foro praticato sulla superficie.
-Il fascio veniva fatto passare attraverso un magnete con il campo orientato lungo l'asse $z$, e veniva poi analizzata la distribuzione del momento angolare di spin lungo l'asse $z$, $S_z$.
+Il fascio veniva fatto passare attraverso un magnete con il campo orientato lungo l'asse $z$, e veniva poi analizzata la distribuzione del momento angolare magnetico lungo l'asse $z$, $S_z$.
 Secondo le predizioni della fisica classica, dovremmo osservare una distribuzione continua di valori per $S_z$, ma le misurazioni
 rilevarono invece che i valori assunti erano soltanto due, $+ \hbar / 2$ e $- \hbar / 2$.
 Essendo $S_z$ una grandezza fisica che assume valori discreti, possiamo modellare una particella di spin $\frac{1}{2}$ secondo il formalismo descritto fino a questo punto. Indicheremo gli stati
@@ -18,7 +18,7 @@ con, rispettivamente:
 		\ket{+z} \quad \quad \ket{-z}
 	\]
 
-Possiamo quindi, ad esempio, scrivere uno stato generico $\ket{\psi}$ di una particella come:
+Possiamo quindi, ad esempio, scrivere uno stato generico $\ket{\psi}$ di spin per una particella come:
 
 	\begin{equation}
 		\ket{\psi} =  \ket{+z} \braket{+z}{\psi} + \ket{-z} \braket{-z}{\psi}
@@ -61,7 +61,7 @@ Per la \eqref{eq:proofHardAlt} abbiamo anche:
 	Notiamo che $ \hat{R}( \tfrac{\pi}{2} j) $ non \`e autoaggiunto, infatti se fosse $ \hat{R}(\tfrac{\pi}{2} j) = \hat{R}^\dagger(\tfrac{\pi}{2} j)$ dovremmo avere:
 	
 	\begin{equation}
-	 	1 = \braket{+x}{+x} = \left( \bra{+z} \hat{R}(\tfrac{\pi}{2} j) \right ) \left (\hat{R}(\tfrac{\pi}{2} j) \right ) = \mel{+z}{\hat{R}(\tfrac{\pi}{2} j)\hat{R}(\tfrac{\pi}{2} j) }{+z} 
+	 	1 = \braket{+x}{+x} = \left( \bra{+z} \hat{R}(\tfrac{\pi}{2} j) \right ) \left (\hat{R}(\tfrac{\pi}{2} j) \ket{+z} \right ) = \mel{+z}{\hat{R}(\tfrac{\pi}{2} j)\hat{R}(\tfrac{\pi}{2} j) }{+z} 
 	\end{equation} 
 
 Ma se $ \hat{R}(\tfrac{\pi}{2} j )$ effettua una rotazione di 90 gradi attorno all'asse $y$, allora applicato due volte effettuer\`a una rotazione di 180 gradi. Allora:
@@ -90,7 +90,7 @@ Applicando la \eqref{eq:rotationOperatorGeneric} e la \eqref{eq:rotationOperator
 		1 = \braket{+x}{+x} = \left ( \bra{+z} \hat{R}^\dagger(\tfrac{\pi}{2} j) \right ) \left ( \hat{R}(\tfrac{\pi}{2} j) \ket{+z} \right ) = \braket{+z}{+z} = 1
 	\end{equation}
 
-Da cui deduciamo che l'operatore di rotazione \`e l'inverso del suo aggiunto. In altre parole, se $\hat{R}(\tfrac{\pi}{2} j)$ esegue una rotazione intorno all'asse $y$ di 90 gradi in senso orario, $\hat{R}^\dagger(\tfrac{\pi}{2} j) $ compie la medesima rotazione in senso antiorario. \\
+Da cui deduciamo che l'operatore di rotazione \`e \textit{unitario}, ovvero l'inverso del suo aggiunto. In altre parole, se $\hat{R}(\tfrac{\pi}{2} j)$ esegue una rotazione intorno all'asse $y$ di 90 gradi in senso orario, $\hat{R}^\dagger(\tfrac{\pi}{2} j) $ compie la medesima rotazione in senso antiorario. \\
 
 \subsection{Generatore di rotazioni}
 
@@ -130,7 +130,7 @@ Possiamo quindi riscrivere l'operatore di rotazione $\hat{R} (\vartheta k )$ com
 		\hat{R} (\vartheta k ) = \lim_{N \to +\infty} \left [ 1 - \frac{i}{\hbar} \left ( \frac {\vartheta}{N} \right ) \right ] ^ N
 	\end{equation}
 
-Espandendo RHS in serie di Taylor, possiamo stabilire infine:
+Espandendo il membro destro in serie di Taylor, possiamo stabilire infine:
 
 	\begin{equation} \label{eq:rOperatorAsExp}
 		\hat{R} (\vartheta k ) = e ^ {-i \hat{J}_z \vartheta / \hbar}
@@ -156,7 +156,7 @@ dove $c$ \`e una costante, ovvero se $\ket{+z}$ \`e un autovettore di $\hat{J}_z
 
 Supponiamo per assurdo che la \eqref{eq:proofEigenketCondition} sia falsa. Dunque, $\hat{J}_z$ deve essere diverso da $c \ket{+z}$, ovvero deve contenere un termine diverso da $\ket{+z}$, ad esempio $\ket{+x}$. Ma allora i primi  due termini della successione risulterebbero valere $\ket{+z}$ pi\`u un termine in $\ket{+x}$, che non pu\`o essere eliminato perch\`e termini che contengono potenze diverse di $\vartheta$ sono linearmente indipendenti tra loro.
 
-Si pu\`o mostrare che l'autovalore associato ad un tale autostato corrisponde esattamente al valore $S_z$, misurato dagli esperimenti di Stern-Gerlach, in formule:
+L'autovalore associato ad un tale autostato corrisponde esattamente al valore $S_z$, misurato dagli esperimenti di Stern-Gerlach, in formule:
  
  	\begin{equation}
  		\hat{J}_z \ket{\pm z} = \pm \frac{\hbar}{2} \ket{\pm z}
@@ -258,7 +258,6 @@ Ovvero:
 La matrice \`e diagonale, ed ovviamente gli autovalori sono gli elementi della diagonale perch\`e stiamo usando una base di autovettori ortogonali. A questo punto, le relazioni $\hat{J}_z \ket{+z} = (\hbar / 2) \ket{+z}$ e $\hat{J}_z \ket{-z} = (- \hbar / 2) \ket{-z}$ possono essere espresse semplicemente come:
 
 	\begin{equation}
-		\hat{J}_z = 
 		\left( \begin{array}{c c}
 				\hbar / 2 & 0 \\
 				0 &  - \hbar / 2 \\ 
@@ -278,7 +277,6 @@ La matrice \`e diagonale, ed ovviamente gli autovalori sono gli elementi della d
 e
 
 	\begin{equation}
-		\hat{J}_z = 
 		\left( \begin{array}{c c}
 				\hbar / 2 & 0 \\
 				0 &  - \hbar / 2 \\ 
@@ -288,7 +286,7 @@ e
 				0 \\
 				1 \\
 			\end{array}
-		\right ) -\frac{\hbar}{2} \left( \begin{array}{c}
+		\right ) = -\frac{\hbar}{2} \left( \begin{array}{c}
 				0 \\
 				1 \\
 			\end{array}
@@ -298,7 +296,6 @@ e
 Possiamo inoltre scrivere:
 
 	\begin{equation}
-		\hat{J}_z = 
 		\left( \begin{array}{c c}
 				\hbar / 2 & 0 \\
 				0 &  - \hbar / 2 \\ 
@@ -384,7 +381,7 @@ Quindi possiamo scrivere:
 			\end{array} \right )_{B_z}
 	\end{equation}
 
-Possiamo notare che l'ultimo termine a destra della \eqref{eq:rotChangeBasis} \`e esattamente $\ket{\psi}$ scritto in base $B_x = \{ \ket{+x}, \ket{-x} \}$. Supponiamo ora di avere un vettore $\ket{\psi}$ scritto in base $B_x$. Inserendo l'operatore identitario scritto in base $B_z$ otteniamo:
+Possiamo notare che l'ultimo termine a destra della \eqref{eq:rotChangeBasis} \`e esattamente $\ket{\psi}$ scritto in base $B_x = \{ \ket{+x}, \ket{-x} \}$. Supponiamo ora di avere un vettore $\ket{\psi}$ scritto in base $B_x$. Inserendo l'operatore identit\`a scritto in base $B_z$ otteniamo:
 
 	\begin{equation}
 		\left ( \begin{array}{c}
@@ -401,7 +398,7 @@ Possiamo notare che l'ultimo termine a destra della \eqref{eq:rotChangeBasis} \`
 		\end{array} \right )_{B_z}  
 	\end{equation}
 
-Svolgendo i conti si ha:
+Svolgendo i calcoli si ha:
 
 	\begin{equation}	
 		=
@@ -441,10 +438,9 @@ La chiameremo $S( \tfrac{\pi}{2} j )$. Possiamo facilmente verificare che $S ( \
 	  S ( \tfrac{\pi}{2} j ) S^\dagger ( \tfrac{\pi}{2} j ) = I
 	\end{equation}
 
-Consideriamo ora un vettore generico $\hat{A}$. La sua rappresentazione in base $B_x$ \`e:
+Consideriamo ora un operatore generico $\hat{A}$. La sua rappresentazione in base $B_x$ \`e:
 
 	\[
-		\hat{A} = 
 			\left ( \begin{array}{c c}
 				\mel{+x}{\hat{A}}{+x} & \mel{+x}{A}{-x} \\
 				\mel{-x}{\hat{A}}{+x} & \mel{-x}{A}{-x}
@@ -454,7 +450,6 @@ Consideriamo ora un vettore generico $\hat{A}$. La sua rappresentazione in base 
 La matrice precedente si pu\`o riscrivere come:
 
 	\begin{equation}
-		\hat{A} = 
 			\left ( \begin{array}{c c}
 				\mel{+z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{+z} & 
 				\mel{+z}{ \hat{R} ^\dagger( \tfrac{\pi}{2} j) \hat{A} \hat{R} ( \tfrac{\pi}{2} j) }{-z} \\
